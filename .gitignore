@@ -1,3 +1,14 @@
+.gradle
+/local.properties
+/.idea/workspace.xml
+/.idea/libraries
+.DS_Store
+/build
+/captures
+
+#!! ERROR: and is undefined. Use list command to see defined gitignore types !!#
+
+### Android ###
 # Built application files
 *.apk
 *.ap_
@@ -35,6 +46,10 @@ captures/
 # Intellij
 *.iml
 .idea/workspace.xml
+.idea/libraries
 
 # Keystore files
 *.jks
+
+### Android Patch ###
+gen-external-apklibs
