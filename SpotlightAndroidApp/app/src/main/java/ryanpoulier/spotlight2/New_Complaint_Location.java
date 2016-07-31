@@ -1,12 +1,15 @@
 package ryanpoulier.spotlight2;
 
+import android.Manifest;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.graphics.Camera;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
 import android.net.Uri;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
@@ -34,8 +37,8 @@ import java.io.IOException;
 import java.util.List;
 
 public class New_Complaint_Location extends AppCompatActivity implements OnMapReadyCallback {
-String ADDRESS, result, addressline, town, gpsCoordinates, dragresult;
-Marker marker=null;
+    String ADDRESS, result, addressline, town, gpsCoordinates, dragresult;
+    Marker marker = null;
 
     private GoogleMap mMap;
     /**
@@ -63,44 +66,23 @@ Marker marker=null;
         client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
 
         //if (mMap != null) {
-            //mMap.setInfoWindowAdapter(new GoogleMap.InfoWindowAdapter() {
-               // @Override
-                //public View getInfoWindow(Marker marker) {
-                  //  return null;
-               // }
+        //mMap.setInfoWindowAdapter(new GoogleMap.InfoWindowAdapter() {
+        // @Override
+        //public View getInfoWindow(Marker marker) {
+        //  return null;
+        // }
 
-               // @Override
-               // public View getInfoContents(Marker marker) {
-                 //   return null;
-                //}
-           // });
+        // @Override
+        // public View getInfoContents(Marker marker) {
+        //   return null;
+        //}
+        // });
 
-            //mMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
 
-               // @Override
-                //public void onMapClick(LatLng laln) {
-                   // Geocoder gc = new Geocoder(New_Complaint_Location.this);
-                   // List<Address> alist = null;
-
-                    //try {
-                    //    alist = gc.getFromLocation(laln.latitude, laln.longitude, 1);
-                    //} catch (IOException e) {
-                    //    e.printStackTrace();
-                    //    return;
-                   // }
-
-                    //Address add = alist.get(0);
-                    //marker = mMap.addMarker(new MarkerOptions().snippet("Lat: " + add.getLatitude() + ", Lng: " + add.getLongitude()).title("Searched location"));
-                    //mMap.animateCamera(CameraUpdateFactory.newLatLng(laln));
-                    //marker.showInfoWindow();
-
-               // }
-            //});
-       // }
+//         }
     }
 
-
-      /**
+    /**
      * Manipulates the map once available.
      * This callback is triggered when the map is ready to be used.
      * This is where we can add markers or lines, add listeners or move the camera. In this case,
@@ -117,6 +99,16 @@ Marker marker=null;
         LatLng colombo = new LatLng(6.927546, 79.862264);
         float zoomLevel = 14;
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(colombo, zoomLevel));
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            // TODO: Consider calling
+            //    ActivityCompat#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for ActivityCompat#requestPermissions for more details.
+            return;
+        }
         mMap.setMyLocationEnabled(true);
 
         if (mMap != null) {
@@ -124,10 +116,12 @@ Marker marker=null;
             mMap.setOnMarkerDragListener(new GoogleMap.OnMarkerDragListener() {
 
                 @Override
-                public void onMarkerDragStart(Marker marker) {}
+                public void onMarkerDragStart(Marker marker) {
+                }
 
                 @Override
-                public void onMarkerDrag(Marker marker) {}
+                public void onMarkerDrag(Marker marker) {
+                }
 
                 @Override
                 public void onMarkerDragEnd(Marker marker) {
@@ -147,9 +141,9 @@ Marker marker=null;
                     Address dragadd = draglist.get(0);
                     addressline = dragadd.getAddressLine(0);
                     town = dragadd.getSubLocality();
-                    String draglat= String.valueOf(dragadd.getLatitude());
+                    String draglat = String.valueOf(dragadd.getLatitude());
                     String draglong = String.valueOf(dragadd.getLongitude());
-                    dragresult = addressline + ", " + town + "; " + draglat+ "," + draglong;
+                    dragresult = addressline + ", " + town + "; " + draglat + "," + draglong;
                     String storedragcoord = draglat + "," + draglong;
                     gpsCoordinates = storedragcoord.toString();
                     marker.setTitle("Selected location");
@@ -160,6 +154,40 @@ Marker marker=null;
 
             });
         }
+
+        mMap.setOnMapLongClickListener(new GoogleMap.OnMapLongClickListener() {
+            @Override
+            public void onMapLongClick(LatLng latLng) {
+                if(marker != null){
+                    marker.remove();
+                }
+                Geocoder gc = new Geocoder(New_Complaint_Location.this);
+                List<Address> alist = null;
+
+                try {
+                    alist = gc.getFromLocation(latLng.latitude, latLng.longitude, 1);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    return;
+                }
+
+                Address add = alist.get(0);
+                marker = mMap.addMarker(new MarkerOptions().position(new LatLng(add.getLatitude(), add.getLongitude())));
+                //marker.setSnippet("Lat: " + add.getLatitude() + ", Lng: " + add.getLongitude());
+                //marker.setTitle("Searched location");
+                mMap.animateCamera(CameraUpdateFactory.newLatLng(latLng));
+                //marker.showInfoWindow();
+            }
+        });
+
+        mMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
+
+            @Override
+            public void onMapClick(LatLng laln) {
+
+
+            }
+        });
     }
 
     // code from https://www.youtube.com/watch?v=dr0zEmuDuIk
@@ -174,7 +202,7 @@ Marker marker=null;
             try {
                 addressList = geocoder.getFromLocationName(location, 1);
             } catch (IOException e) {
-                Toast.makeText (New_Complaint_Location.this, "Location not found. Please check the spelling", Toast.LENGTH_LONG).show();
+                Toast.makeText(New_Complaint_Location.this, "Location not found. Please check the spelling", Toast.LENGTH_LONG).show();
                 e.printStackTrace();
             }
             Address address = addressList.get(0);
@@ -195,16 +223,16 @@ Marker marker=null;
                 Address add = list.get(0);
                 addressline = add.getAddressLine(0);
                 town = add.getSubLocality();
-                String searchlat= String.valueOf(add.getLatitude());
-                String searchlong= String.valueOf(add.getLongitude());
-                result = addressline + ", " + town + "; " + searchlat+ "," + searchlong;
+                String searchlat = String.valueOf(add.getLatitude());
+                String searchlong = String.valueOf(add.getLongitude());
+                result = addressline + ", " + town + "; " + searchlat + "," + searchlong;
                 String storecoord = searchlat + "," + searchlong;
-                gpsCoordinates= storecoord.toString();
+                gpsCoordinates = storecoord.toString();
             }
 
 
             //code from http://www.codeproject.com/Articles/825942/Flirting-with-Google-Maps-on-Android
-            marker= mMap.addMarker(new MarkerOptions().position(latLng).draggable(true).flat(true).snippet(result).title("Searched location"));
+            marker = mMap.addMarker(new MarkerOptions().position(latLng).draggable(true).flat(true).snippet(result).title("Searched location"));
             mMap.animateCamera(CameraUpdateFactory.newLatLng(latLng));
             marker.showInfoWindow();
 
@@ -254,7 +282,7 @@ Marker marker=null;
 
     //code from https://www.youtube.com/watch?v=8byyh8Lb_xc&index=3&list=FLsCn-tnRZVHIyKOq7o6b36Q and https://www.youtube.com/watch?v=xv_JJbjDQ3M&list=FLsCn-tnRZVHIyKOq7o6b36Q&index=2
 
-    public void storeLocation () {
+    public void storeLocation() {
 
         //SharedPreferences addprefs = getSharedPreferences("address", MODE_WORLD_READABLE);
         //SharedPreferences.Editor editor= addprefs.edit();
@@ -264,16 +292,16 @@ Marker marker=null;
 
         SharedPreferences prefs = getSharedPreferences("gpsCoordinates", MODE_WORLD_READABLE);
 
-        SharedPreferences.Editor editor=prefs.edit();
+        SharedPreferences.Editor editor = prefs.edit();
         editor.putString("gpsCoordinates", String.valueOf(gpsCoordinates));
         editor.apply();
 
         //Toast.makeText(this, "Location Saved", Toast.LENGTH_LONG).show();
     }
 
-    public void OpenNewComplaintSuggest (View view){
+    public void OpenNewComplaintSuggest(View view) {
         storeLocation();
-        Intent intent=new Intent (this,New_Complaint_Suggest.class);
+        Intent intent = new Intent(this, New_Complaint_Suggest.class);
         startActivity(intent);
     }
 
