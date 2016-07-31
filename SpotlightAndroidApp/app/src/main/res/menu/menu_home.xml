@@ -1,0 +1,38 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" tools:context=".Home">
+    <item
+        android:id="@+id/citizenleaderboard"
+        android:title="User Leaderboard"
+        android:orderInCategory="101"
+        app:showAsAction="never"
+        android:onClick="OpenCitizenLeaderboard"/>
+    <item
+            android:id="@+id/user_settings"
+            android:title="My settings"
+            android:orderInCategory="102"
+            app:showAsAction="never"
+            android:onClick="OpenUserSettings"/>
+        <item
+            android:id="@+id/help"
+            android:title="Help"
+            android:orderInCategory="103"
+            app:showAsAction="never" />
+        <item
+            android:id="@+id/feedback"
+            android:title="Feedback"
+            android:orderInCategory="104"
+            app:showAsAction="never" />
+        <item
+            android:id="@+id/aboutspotlight"
+            android:title="About"
+            android:orderInCategory="105"
+            app:showAsAction="never"
+            android:onClick="OpenAbout"/>
+        <item
+            android:id="@+id/spotlight_test"
+            android:title="spotlight test"
+            android:orderInCategory="106"
+            app:showAsAction="never"
+            android:onClick="OpenSpotlightTest"/>
+</menu>

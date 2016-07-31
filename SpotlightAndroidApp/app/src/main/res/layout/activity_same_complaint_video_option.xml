@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="ryanpoulier.spotlight2.New_Complaint_Video_Option"
+    android:screenOrientation="portrait">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:id="@+id/linearLayout">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Do you wish to upload a video?"
+            android:id="@+id/textView28"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:textColor="#000000"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:id="@+id/textView29" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Submitting new video will make the complaint even more valid and increase the likelihood of the issue being resolved faster."
+            android:id="@+id/textView30"
+            android:layout_below="@+id/textView28"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:textStyle="italic" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="335dp"
+            android:layout_gravity="center_horizontal" />
+    </LinearLayout>
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/gridLayout6"
+        android:layout_below="@+id/linearLayout">
+
+        <Button
+            android:layout_width="155dp"
+            android:layout_height="50dp"
+            android:text="NO"
+            android:id="@+id/btn_Video_No"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:background="#a34c45"
+            android:textColor="#ffffff"
+            android:textSize="25dp"
+            android:layout_gravity="center"
+            android:onClick="OpenSameComplaintDescription"
+            android:layout_marginRight="5dp" />
+
+        <Button
+            android:layout_width="155dp"
+            android:layout_height="50dp"
+            android:text="YES"
+            android:id="@+id/btn_Video_Yes"
+            android:layout_row="0"
+            android:layout_column="1"
+            android:background="#5c9758"
+            android:textColor="#ffffff"
+            android:textSize="25dp"
+            android:layout_gravity="center"
+            android:onClick="OpenSameComplaintVideo"
+            android:layout_marginLeft="5dp" />
+    </GridLayout>
+
+</RelativeLayout>

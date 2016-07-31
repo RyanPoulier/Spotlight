@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="ryanpoulier.spotlight2.New_Complaint_Preview"
+    android:background="#ffffff"
+    android:focusable="false"
+    android:focusableInTouchMode="false">
+
+    <ScrollView
+        android:layout_width="430dp"
+        android:layout_height="410dp"
+        android:id="@+id/scrollView4"
+        android:background="#e6ebf0"
+        android:layout_alignParentStart="false"
+        android:focusable="false"
+        android:focusableInTouchMode="false">
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true">
+
+            <TextView
+                android:layout_width="160dp"
+                android:layout_height="match_parent"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Submission date and time"
+                android:id="@+id/textView24"
+                android:layout_row="4"
+                android:layout_column="0"
+                android:textColor="#000000"
+                android:layout_marginLeft="5dp"
+                android:focusable="true"
+                android:focusableInTouchMode="true" />
+
+            <TextView
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Issue type"
+                android:id="@+id/textView4"
+                android:layout_row="6"
+                android:layout_column="0"
+                android:textColor="#000000"
+                android:layout_marginLeft="5dp" />
+
+            <Space
+                android:layout_width="20px"
+                android:layout_height="30px"
+                android:layout_row="7"
+                android:layout_column="0" />
+
+            <TextView
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="issue type"
+                android:id="@+id/txtIssueType"
+                android:layout_row="6"
+                android:layout_column="2"
+                android:textColor="#2980b9" />
+
+            <TextView
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Location"
+                android:id="@+id/textView32"
+                android:layout_row="8"
+                android:layout_column="0"
+                android:textColor="#000000"
+                android:layout_marginLeft="5dp" />
+
+            <Space
+                android:layout_width="20px"
+                android:layout_height="30px"
+                android:layout_row="9"
+                android:layout_column="0" />
+
+            <TextView
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="gps coord"
+                android:id="@+id/txtCoordinates"
+                android:layout_row="8"
+                android:layout_column="2"
+                android:singleLine="false"
+                android:textColor="#2980b9" />
+
+            <TextView
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Description"
+                android:id="@+id/textView31"
+                android:layout_row="10"
+                android:layout_column="0"
+                android:textColor="#000000"
+                android:layout_marginLeft="5dp" />
+
+            <Space
+                android:layout_width="20px"
+                android:layout_height="30px"
+                android:layout_row="5"
+                android:layout_column="0" />
+
+            <TextView
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Complaint ID"
+                android:id="@+id/textView3"
+                android:layout_row="0"
+                android:layout_column="0"
+                android:textColor="#000000"
+                android:layout_marginLeft="5dp" />
+
+            <TextView
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:id="@+id/txtComplaintId"
+                android:layout_row="0"
+                android:layout_column="2"
+                android:textColor="#2980b9" />
+
+            <Space
+                android:layout_width="20px"
+                android:layout_height="30px"
+                android:layout_row="1"
+                android:layout_column="0" />
+
+            <TextView
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Complaint title"
+                android:id="@+id/textView7"
+                android:layout_row="2"
+                android:layout_column="0"
+                android:textColor="#000000"
+                android:layout_marginLeft="5dp" />
+
+            <TextView
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="title"
+                android:id="@+id/txtTitle"
+                android:layout_row="2"
+                android:layout_column="2"
+                android:textColor="#2980b9" />
+
+            <Space
+                android:layout_width="20px"
+                android:layout_height="30px"
+                android:layout_row="3"
+                android:layout_column="0" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text=" "
+                android:id="@+id/textView22"
+                android:layout_row="4"
+                android:layout_column="1" />
+
+            <TextView
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="date"
+                android:id="@+id/txtDate"
+                android:layout_row="4"
+                android:layout_column="2"
+                android:singleLine="false"
+                android:textColor="#2980b9" />
+
+            <TextView
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Description"
+                android:id="@+id/txtDesc_Preview"
+                android:layout_row="10"
+                android:layout_column="2"
+                android:singleLine="false"
+                android:textColor="#2980b9" />
+
+            <Space
+                android:layout_width="20px"
+                android:layout_height="30px"
+                android:layout_row="11"
+                android:layout_column="0" />
+
+            <TextView
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Images"
+                android:id="@+id/textView5"
+                android:layout_row="12"
+                android:layout_column="0"
+                android:layout_alignBottom="@+id/scrollView4"
+                android:layout_alignLeft="@+id/btn_Complaint_Submit"
+                android:layout_alignStart="@+id/btn_Complaint_Submit"
+                android:textColor="#000000"
+                android:layout_marginLeft="5dp" />
+
+            <Space
+                android:layout_width="20px"
+                android:layout_height="30px"
+                android:layout_row="13"
+                android:layout_column="0" />
+
+            <ImageView
+                android:layout_width="110dp"
+                android:layout_height="70dp"
+                android:id="@+id/imgView_Preview_Image_1"
+                android:layout_row="14"
+                android:layout_column="0"
+                android:background="#aaa9a9"
+                android:layout_marginLeft="20dp" />
+
+            <ImageView
+                android:layout_width="110dp"
+                android:layout_height="70dp"
+                android:id="@+id/imgView_Preview_Image_2"
+                android:layout_row="14"
+                android:layout_column="2"
+                android:background="#aaa9a9" />
+
+            <Space
+                android:layout_width="20px"
+                android:layout_height="30px"
+                android:layout_row="15"
+                android:layout_column="0" />
+
+            <ImageView
+                android:layout_width="110dp"
+                android:layout_height="70dp"
+                android:id="@+id/imgView_Preview_Image_3"
+                android:layout_row="16"
+                android:layout_column="0"
+                android:background="#aaa9a9"
+                android:layout_marginLeft="20dp" />
+
+            <TextView
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Video"
+                android:id="@+id/textView8"
+                android:layout_row="18"
+                android:layout_column="0"
+                android:layout_alignBottom="@+id/scrollView4"
+                android:layout_alignLeft="@+id/btn_Complaint_Submit"
+                android:layout_alignStart="@+id/btn_Complaint_Submit"
+                android:textColor="#000000"
+                android:layout_marginLeft="5dp" />
+
+            <Space
+                android:layout_width="20px"
+                android:layout_height="30px"
+                android:layout_row="17"
+                android:layout_column="0" />
+
+            <ImageView
+                android:layout_width="110dp"
+                android:layout_height="70dp"
+                android:id="@+id/imgView_Preview_Image_4"
+                android:layout_row="16"
+                android:layout_column="2"
+                android:background="#aaa9a9" />
+
+            <VideoView
+                android:layout_width="250dp"
+                android:layout_height="150dp"
+                android:id="@+id/videoView"
+                android:layout_row="19"
+                android:layout_column="0"
+                android:layout_columnSpan="3"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp" />
+        </GridLayout>
+    </ScrollView>
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/scrollView4"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <CheckBox
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Submit anonymously?"
+            android:id="@+id/checkBox"
+            android:layout_above="@+id/btn_Complaint_Submit"
+            android:layout_alignRight="@+id/btn_Complaint_Submit"
+            android:layout_alignEnd="@+id/btn_Complaint_Submit"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:layout_gravity="center"
+            android:checked="false"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_marginTop="10dp"
+            android:background="#e6ebf0" />
+
+        <Button
+            android:layout_width="222dp"
+            android:layout_height="50dp"
+            android:text="SUBMIT"
+            android:id="@+id/btn_Complaint_Submit"
+            android:layout_row="1"
+            android:layout_column="0"
+            android:background="#2980b9"
+            android:textColor="#ffffff"
+            android:textSize="25dp"
+            android:layout_gravity="center"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:onClick="SaveComplaint" />
+    </GridLayout>
+
+</RelativeLayout>

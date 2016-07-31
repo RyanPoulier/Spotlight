@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="ryanpoulier.spotlight2">
+
+    <!--
+         The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
+         Google Maps Android API v2, but you must specify either coarse or fine
+         location permissions for the 'MyLocation' functionality.
+    -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="Spotlight"
+        android:largeHeap="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".Home"
+            android:label="Spotlight"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MyProfile"
+            android:label="My settings"
+            android:parentActivityName=".Home"
+            android:screenOrientation="portrait" />
+        <!--
+             The API key for Google Maps-based APIs is defined as a string resource.
+             (See the file "res/values/google_maps_api.xml").
+             Note that the API key is linked to the encryption key used to sign the APK.
+             You need a different API key for each encryption key, including the release key that is used to
+             sign the APK for publishing.
+             You can define the keys for the debug and release targets in src/debug/ and src/release/.
+        -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <activity
+            android:name=".Nearby_issues"
+            android:label="Nearby complaints"
+            android:parentActivityName=".Home"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".New_complaint"
+            android:label="Select issue type"
+            android:parentActivityName=".Home"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".New_Complaint_Description"
+            android:label="Complaint description"
+            android:parentActivityName=".Home"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".New_Complaint_Preview"
+            android:label="Preview complaint"
+            android:parentActivityName=".Home"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".New_Complaint_Location"
+            android:label="Select issue location"
+            android:parentActivityName=".Home"
+            android:screenOrientation="portrait" />
+
+        <!--
+             ATTENTION: This was auto-generated to add Google Play services to your project for
+             App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information.
+        -->
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <activity
+            android:name=".New_Complaint_Photo"
+            android:label="Upload photo evidence"
+            android:parentActivityName=".Home"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".New_Complaint_Suggest"
+            android:label="Suggested complaints"
+            android:parentActivityName=".Home"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".New_Complaint_Video"
+            android:label="Upload video evidence"
+            android:parentActivityName=".Home"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".New_Complaint_Photo_Option"
+            android:label="Upload photo evidence"
+            android:parentActivityName=".Home"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".New_Complaint_Video_Option"
+            android:label="Upload video evidence"
+            android:parentActivityName=".Home"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Latest_Complaints"
+            android:label="All complaints"
+            android:parentActivityName=".Home"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ComplaintDetails"
+            android:label="Complaint Details"
+            android:parentActivityName=".Home"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MyComplaints"
+            android:label="My Complaints"
+            android:parentActivityName=".Home"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".RequestVotes"
+            android:label="Request votes"
+            android:parentActivityName=".Home"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".RequestUpdate"
+            android:label="Request an update"
+            android:parentActivityName=".Home"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Comment"
+            android:label="New comment"
+            android:parentActivityName=".Home"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".CloseComplaintDetails"
+            android:label="Current complaint details"
+            android:parentActivityName=".Home"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".CloseComplaintPhotoOption"
+            android:label="Upload photo evidence"
+            android:parentActivityName=".Home"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".CloseComplaintPhoto"
+            android:label="Upload photo evidence"
+            android:parentActivityName=".Home"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".CloseComplaintVideoOption"
+            android:label="Upload video evidence"
+            android:parentActivityName=".Home"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".CloseComplaintVideo"
+            android:label="Upload video evidence"
+            android:parentActivityName=".Home"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".CloseComplaintDescription"
+            android:label="Rating and comments"
+            android:parentActivityName=".Home"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".CitizenLeaderboard"
+            android:label="Top 20 users"
+            android:parentActivityName=".Home"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SameComplaintPhotoOption"
+            android:label="Upload new photo evidence"
+            android:parentActivityName=".Home"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SameComplaintPhoto"
+            android:label="Upload new photo evidence"
+            android:parentActivityName=".Home"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SameComplaintVideoOption"
+            android:label="Upload new video evidence"
+            android:parentActivityName=".Home"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ReportAbuse"
+            android:label="Report abuse"
+            android:parentActivityName=".Home"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MyComments"
+            android:label="My votes and comments"
+            android:parentActivityName=".Home"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Chart"
+            android:label="Top 20 complaints"
+            android:parentActivityName=".Home"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".About"
+            android:label="About Spotlight"
+            android:parentActivityName=".Home"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SameComplaintDescription"
+            android:label="Complaint description"
+            android:parentActivityName=".Home"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SameComplaintVideo"
+            android:label="Upload new video evidence"
+            android:parentActivityName=".Home"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SameComplaintPreview"
+            android:label="Preview complaint details"
+            android:parentActivityName=".Home"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".CloseComplaintPreview"
+            android:label="Preview closure details"
+            android:parentActivityName=".Home"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".DeleteComplaint"
+            android:label="Delete complaint"
+            android:parentActivityName=".Home"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".new_resubmission"
+            android:label="Re-submit complaint"
+            android:parentActivityName=".Home"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Resubmit_Option"
+            android:label="Re-submit complaint"
+            android:parentActivityName=".Home"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ResubmitComplaintPreview"
+            android:label="Preview resubmission"
+            android:parentActivityName=".Home"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SpotlightTest"
+            android:label="Spotlight Test"
+            android:parentActivityName=".Home"
+            android:screenOrientation="portrait" />/>
+    </application>
+
+</manifest>

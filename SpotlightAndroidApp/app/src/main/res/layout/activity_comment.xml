@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="ryanpoulier.spotlight2.Comment">
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/button9">
+
+        <EditText
+            android:layout_row="6"
+            android:layout_column="0"
+            android:layout_width="315dp"
+            android:layout_height="200dp"
+            android:inputType="textMultiLine"
+            android:ems="10"
+            android:id="@+id/editText3"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/write_text"
+            android:hint=" Enter new comment here"
+            android:layout_alignParentTop="true"
+            android:layout_columnSpan="3"
+            android:layout_marginLeft="5dp" />
+
+        <Space
+            android:layout_width="20px"
+            android:layout_height="70px"
+            android:layout_row="2"
+            android:layout_column="0" />
+
+        <Space
+            android:layout_width="20px"
+            android:layout_height="20px"
+            android:layout_row="5"
+            android:layout_column="0" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Complaint ID"
+            android:id="@+id/textView81"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:textColor="#000000" />
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="C0001"
+            android:id="@+id/txt_comment_complaint_id"
+            android:layout_row="0"
+            android:layout_column="1"
+            android:layout_marginLeft="170dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Complaint title"
+            android:id="@+id/textView83"
+            android:layout_row="1"
+            android:layout_column="0"
+            android:textColor="#000000" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Comment ID"
+            android:id="@+id/textView86"
+            android:layout_row="3"
+            android:layout_column="0"
+            android:textColor="#000000" />
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="CO0001"
+            android:id="@+id/textView82"
+            android:layout_row="3"
+            android:layout_column="1"
+            android:layout_marginLeft="155dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Comment"
+            android:id="@+id/textView84"
+            android:layout_row="4"
+            android:layout_column="0"
+            android:textColor="#000000"
+            android:layout_marginTop="5dp" />
+
+        <TextView
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="DAMAGED MANHOLE COVER @ 6.918397, 79.851654"
+            android:id="@+id/txt_comment_complaint_title"
+            android:layout_row="1"
+            android:layout_column="1"
+            android:layout_columnSpan="2"
+            android:layout_marginLeft="10dp" />
+
+        <CheckBox
+            android:layout_width="373dp"
+            android:layout_height="wrap_content"
+            android:text="Submit anonymously?"
+            android:id="@+id/checkBox3"
+            android:layout_above="@+id/btn_Complaint_Submit"
+            android:layout_alignRight="@+id/btn_Complaint_Submit"
+            android:layout_alignEnd="@+id/btn_Complaint_Submit"
+            android:layout_row="7"
+            android:layout_column="0"
+            android:layout_gravity="center"
+            android:checked="false"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:background="#e6ebf0"
+            android:layout_columnSpan="3"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp" />
+    </GridLayout>
+
+    <Button
+        android:layout_width="222dp"
+        android:layout_height="50dp"
+        android:text="SUBMIT COMMENT"
+        android:id="@+id/button9"
+        android:layout_row="1"
+        android:layout_column="0"
+        android:background="#2980b9"
+        android:textColor="#ffffff"
+        android:textSize="22dp"
+        android:layout_gravity="center"
+        android:onClick="CommentSubmissionMessages"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+</RelativeLayout>

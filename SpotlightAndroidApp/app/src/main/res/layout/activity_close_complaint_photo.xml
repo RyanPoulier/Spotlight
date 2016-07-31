@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="ryanpoulier.spotlight2.New_Complaint_Photo"
+    android:background="#ffffff">
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/scrollView2">
+
+        <Button
+            android:layout_width="222dp"
+            android:layout_height="50dp"
+            android:text="NEXT"
+            android:id="@+id/btn_Next_Photo"
+            android:layout_row="8"
+            android:layout_column="0"
+            android:background="#2980b9"
+            android:textColor="#ffffff"
+            android:textSize="25dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:onClick="OpenCloseComplaintVideoOption"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp" />
+
+    </GridLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/lnLayout_Title"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="*Select the IMAGE button to open your phone gallery. You may upload up-to 4 images"
+            android:id="@+id/textView12" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:id="@+id/textView16" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="400dp"
+        android:layout_height="350dp"
+        android:id="@+id/scrollView2"
+        android:layout_below="@+id/lnLayout_Title"
+        android:layout_alignParentEnd="true">
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="380dp"
+            android:id="@+id/gridLayout3"
+            android:background="#e6ebf0">
+
+            <ImageView
+                android:layout_width="160dp"
+                android:layout_height="110dp"
+                android:id="@+id/imgview_Image_4"
+                android:layout_row="4"
+                android:layout_column="3"
+                android:layout_gravity="center|top"
+                android:background="#aaa9a9" />
+
+            <ImageButton
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:id="@+id/btn_Image_3"
+                android:layout_row="5"
+                android:layout_column="1"
+                android:src="@mipmap/gallery_icon"
+                android:background="?android:selectableItemBackground"
+                android:scaleType="fitXY"
+                android:layout_gravity="center"
+                android:onClick="OpenImageGallery1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:id="@+id/textView11"
+                android:layout_row="1"
+                android:layout_column="1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="   "
+                android:id="@+id/textView15"
+                android:layout_row="2"
+                android:layout_column="0" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text=" "
+                android:id="@+id/textView14"
+                android:layout_row="2"
+                android:layout_column="2" />
+
+            <ImageView
+                android:layout_width="160dp"
+                android:layout_height="110dp"
+                android:id="@+id/imgview_Image_2"
+                android:layout_row="2"
+                android:layout_column="3"
+                android:layout_gravity="center"
+                android:background="#aaa9a9" />
+
+            <ImageButton
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:id="@+id/btn_Image_1"
+                android:layout_row="3"
+                android:layout_column="1"
+                android:src="@mipmap/gallery_icon"
+                android:background="?android:selectableItemBackground"
+                android:scaleType="fitXY"
+                android:onClick="OpenImageGallery1"
+                android:nestedScrollingEnabled="false"
+                android:layout_gravity="center" />
+
+            <ImageView
+                android:layout_width="160dp"
+                android:layout_height="110dp"
+                android:id="@+id/imgview_Image_3"
+                android:layout_row="4"
+                android:layout_column="1"
+                android:layout_gravity="center"
+                android:background="#aaa9a9" />
+
+            <ImageButton
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:id="@+id/btn_Image_2"
+                android:layout_row="3"
+                android:layout_column="3"
+                android:src="@mipmap/gallery_icon"
+                android:background="?android:selectableItemBackground"
+                android:scaleType="fitXY"
+                android:layout_gravity="center"
+                android:onClick="OpenImageGallery1" />
+
+            <ImageView
+                android:layout_width="160dp"
+                android:layout_height="110dp"
+                android:id="@+id/imgview_Image_1"
+                android:layout_row="2"
+                android:layout_column="1"
+                android:layout_gravity="center"
+                android:background="#aaa9a9" />
+
+            <ImageButton
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:id="@+id/btn_Image_4"
+                android:layout_row="5"
+                android:layout_column="3"
+                android:src="@mipmap/gallery_icon"
+                android:background="?android:selectableItemBackground"
+                android:scaleType="fitXY"
+                android:layout_gravity="center"
+                android:nestedScrollingEnabled="false"
+                android:onClick="OpenImageGallery1" />
+
+        </GridLayout>
+    </ScrollView>
+
+</RelativeLayout>

@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:layout_marginBottom="10dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:descendantFocusability="blocksDescendants"
+    android:background="?android:selectableItemBackground">
+
+    <TextView
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/t_title"
+        android:text= "title is here"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_marginLeft="40dp"
+        android:textColor="#045c94"
+        android:layout_marginTop="5dp"
+        android:textStyle="bold"
+        android:textSize="16dp"
+        android:textAllCaps="true"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/t_issue_type"
+        android:layout_gravity="center_horizontal"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="#2980b9"
+
+        android:layout_alignTop="@+id/textView42"
+        android:layout_toRightOf="@+id/textView42"
+        android:layout_toEndOf="@+id/textView42"
+        android:layout_marginLeft="3dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Status:"
+        android:id="@+id/textView42"
+        android:textColor="#FF63A0C7"
+        android:textStyle="bold|italic"
+        android:layout_below="@+id/t_title"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="40dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Submission timestamp:"
+        android:id="@+id/textView43"
+        android:layout_below="@+id/t_issue_type"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="40dp"
+        android:textColor="#FF63A0C7"
+        android:layout_marginTop="5dp"
+        android:textStyle="bold|italic"
+        android:layout_marginBottom="5dp" />
+
+    <TextView
+        android:layout_width="230dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/t_timestamp"
+        android:text="timestamp is here"
+        android:layout_gravity="center_horizontal"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="#FF63A0C7"
+        android:layout_alignTop="@+id/textView43"
+        android:layout_toRightOf="@+id/textView43"
+        android:layout_toEndOf="@+id/textView43"
+        android:layout_marginLeft="3dp"
+        android:textStyle="italic"
+        android:layout_marginBottom="3dp" />
+
+    <ImageButton
+        android:layout_width="110dp"
+        android:layout_height="40dp"
+        android:id="@+id/btn_summaryvote"
+        android:src="@mipmap/vote_icon"
+        android:background="?android:selectableItemBackground"
+        android:layout_alignWithParentIfMissing="false"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:layout_alignTop="@+id/btn_summarycomment"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="40dp" />
+
+    <ImageButton
+        android:layout_width="110dp"
+        android:layout_height="40dp"
+        android:id="@+id/btn_summarycomment"
+        android:src="@mipmap/comment_icon"
+        android:background="?android:selectableItemBackground"
+        android:layout_below="@+id/textView43"
+        android:layout_marginTop="20dp"
+        android:layout_toRightOf="@+id/btn_summaryvote"
+        android:layout_toEndOf="@+id/btn_summaryvote"
+        android:layout_marginLeft="3dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Notification sent to GoSL"
+        android:id="@+id/textView70"
+        android:textColor="#FF63A0C7"
+        android:textStyle="italic"
+        android:layout_alignTop="@+id/t_issue_type"
+        android:layout_toRightOf="@+id/t_issue_type"
+        android:layout_toEndOf="@+id/t_issue_type" />
+
+    <ImageButton
+        android:layout_width="110dp"
+        android:layout_height="40dp"
+        android:id="@+id/btn_summaryshare"
+        android:src="@mipmap/share_icon"
+        android:background="?android:selectableItemBackground"
+        android:layout_alignTop="@+id/btn_summarycomment"
+        android:layout_toRightOf="@+id/btn_summarycomment"
+        android:layout_toEndOf="@+id/btn_summarycomment"
+        android:layout_marginLeft="3dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="2dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="ID"
+        android:id="@+id/txtID"
+        android:layout_alignBottom="@+id/btn_summarycomment"
+        android:layout_alignRight="@+id/textView70"
+        android:layout_alignEnd="@+id/textView70" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="1"
+        android:id="@+id/txt_priority_number"
+        android:textSize="40dp"
+        android:textStyle="bold"
+        android:layout_above="@+id/t_issue_type"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textColor="#000000" />
+
+</RelativeLayout>

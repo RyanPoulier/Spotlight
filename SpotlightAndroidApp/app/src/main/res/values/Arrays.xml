@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array
+        name="issue_types">
+
+        <item>Household waste (garbage) dump</item>
+        <item>Industrial waste dump</item>
+        <item>Sewage dump</item>
+
+        <item>Blocked drain</item>
+
+        <item>Pothole</item>
+        <item>Damaged manhole cover</item>
+        <item>Broken sidewalk</item>
+        <item>Damaged road sign</item>
+        <item>Street light</item>
+        <item>Traffic light</item>
+
+        <item>Overgrown tree</item>
+        <item>Fallen tree</item>
+    </string-array>
+
+    <string-array
+        name="complaintanonymity">
+        <item>Always show my details when submitting complaints</item>
+        <item>Always submit new complaints anonymously/without my details</item>
+        <item>Ask me every time</item>
+    </string-array>
+
+    <string-array
+        name="commmentanonymity">
+        <item>Always show my details when posting comments</item>
+        <item>Always post comments anonymously/without my details</item>
+        <item>Ask me every time</item>
+    </string-array>
+
+    <string-array
+        name="userrequests">
+        <item>Allow other users to send me requests</item>
+        <item>Do not allow other users to send me requests</item>
+    </string-array>
+
+    <string-array
+        name="sortoptions">
+        <item>Latest</item>
+        <item>Issue type</item>
+        <item>Status</item>
+    </string-array>
+
+    <string-array
+        name="abuse_types">
+        <item>This issue has already been resolved</item>
+        <item>Offensive material</item>
+    </string-array>
+
+    <string-array
+        name="delete_types">
+        <item>Issue has already been reported previously by another user</item>
+        <item>Issue was resolved by GoSL</item>
+        <item>I do not wish to state a reason</item>
+    </string-array>
+
+    </resources>

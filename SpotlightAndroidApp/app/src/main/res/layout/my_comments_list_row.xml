@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:layout_marginBottom="10dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:descendantFocusability="blocksDescendants"
+    android:background="?android:selectableItemBackground">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/t_issue_type"
+        android:layout_gravity="center_horizontal"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="#2980b9"
+
+        android:layout_marginLeft="3dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Comment timestamp:"
+        android:id="@+id/textView43"
+        android:textColor="#FF63A0C7"
+        android:textStyle="bold|italic"
+        android:layout_below="@+id/textView90"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="10dp" />
+
+    <TextView
+        android:layout_width="190dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_my_comment_timestamp"
+        android:text="timestamp is here"
+        android:layout_gravity="center_horizontal"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="#FF63A0C7"
+        android:textStyle="italic"
+        android:layout_alignTop="@+id/textView43"
+        android:layout_toRightOf="@+id/textView43"
+        android:layout_toEndOf="@+id/textView43"
+        android:layout_marginLeft="5dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:id="@+id/txt_my_comment"
+        android:textColor="#000000"
+        android:text="comment appears here"
+        android:textStyle="italic"
+        android:textSize="15dp"
+        android:layout_below="@+id/textView43"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="10dp"
+        android:background="#d2e7f6"
+        android:layout_marginBottom="5dp" />
+
+    <TextView
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_my_comment_complaint_title"
+        android:text="title is here"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#045c94"
+        android:textStyle="bold"
+        android:textSize="16dp"
+        android:textAllCaps="true"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/t_issue_type"
+        android:layout_toEndOf="@+id/t_issue_type" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Status:"
+        android:id="@+id/textView90"
+        android:textColor="#FF63A0C7"
+        android:textStyle="bold|italic"
+        android:layout_below="@+id/t_issue_type"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="10dp" />
+
+    <ImageButton
+        android:layout_width="110dp"
+        android:layout_height="40dp"
+        android:id="@+id/btn_my_comment_delete"
+        android:src="@mipmap/delete_icon"
+        android:background="?android:selectableItemBackground"
+        android:layout_above="@+id/txt_my_comment"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="status here"
+        android:id="@+id/txt_my_comment_status"
+        android:textColor="#FF63A0C7"
+        android:textStyle="italic"
+        android:layout_above="@+id/textView43"
+        android:layout_toRightOf="@+id/textView90"
+        android:layout_toEndOf="@+id/textView90"
+        android:layout_marginLeft="5dp" />
+
+</RelativeLayout>

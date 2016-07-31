@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Spotlight</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Spotlight</string>
+    <string name="title_activity_nearby_issues">Spotlight</string>
+    <string name="title_activity_new__complaint__location">Spotlight</string>
+
+</resources>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="ryanpoulier.spotlight2.MyComments"
+    android:background="#ffffff">
+
+
+    <TabHost
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/tabHost"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:tabStripEnabled="false"
+                android:divider="#000000"
+                android:touchscreenBlocksFocus="false"
+                android:background="#bad2e1"
+                android:showDividers="beginning|middle|end"></TabWidget>
+
+            <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:id="@+id/lnrVotes"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <ListView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/listViewMyVotes"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:divider="#ccd7e3"
+                        android:dividerHeight="8.0sp"
+                        android:paddingLeft="5dp"
+                        android:paddingTop="5dp"
+                        android:paddingRight="2dp"
+                        android:paddingBottom="5dp"
+                        android:layout_marginLeft="3dp"
+                        android:layout_marginRight="3dp"
+                        android:layout_marginBottom="3dp"
+                        android:background="#ffffff" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lnrComments"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <ListView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/listViewMyComments"
+                        android:divider="#ccd7e3"
+                        android:dividerHeight="8.0sp"
+                        android:paddingLeft="5dp"
+                        android:paddingTop="5dp"
+                        android:paddingRight="2dp"
+                        android:paddingBottom="5dp"
+                        android:layout_marginLeft="3dp"
+                        android:layout_marginRight="3dp"
+                        android:layout_marginBottom="3dp"
+                        android:background="#ffffff" />
+                </LinearLayout>
+
+            </FrameLayout>
+        </LinearLayout>
+    </TabHost>
+</RelativeLayout>

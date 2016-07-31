@@ -1,0 +1,222 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    tools:context=".Home"
+    android:id="@+id/myRelativeLayout">
+
+
+    <GridLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/gridLayout"
+        android:layout_alignParentBottom="true"
+        android:useDefaultMargins="false"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="2dp"
+        android:layout_marginBottom="2dp"
+        android:background="#ffffff">
+
+        <ImageButton
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:id="@+id/btn_new_complaint"
+            android:layout_row="1"
+            android:layout_column="1"
+            android:src="@mipmap/new_complaint"
+            android:background="?android:selectableItemBackground"
+            android:scaleType="fitXY"
+            android:textAlignment="center"
+            android:onClick="OpenNewComplaint"
+            android:layout_gravity="center_horizontal" />
+
+        <ImageButton
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:id="@+id/btn_my_complaints"
+            android:layout_row="1"
+            android:layout_column="3"
+            android:src="@mipmap/my_complaints"
+            android:background="?android:selectableItemBackground"
+            android:scaleType="fitXY"
+            android:layout_gravity="center_horizontal"
+            android:onClick="OpenMyComplaints"
+            android:layout_marginLeft="10dp" />
+
+        <ImageButton
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:id="@+id/btn_my_comments_and_votes"
+            android:layout_row="1"
+            android:layout_column="6"
+            android:src="@mipmap/my_comments_and_votes"
+            android:background="?android:selectableItemBackground"
+            android:scaleType="fitXY"
+            android:layout_gravity="center_horizontal"
+            android:onClick="OpenMyComments" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="New complaint"
+            android:id="@+id/txt_new_complaint"
+            android:layout_row="3"
+            android:layout_column="1"
+            android:layout_gravity="center_horizontal"
+            android:textSize="13dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="My complaints"
+            android:id="@+id/txt_my_complaints"
+            android:layout_row="3"
+            android:layout_column="3"
+            android:layout_gravity="center_horizontal"
+            android:textSize="13dp"
+            android:layout_marginLeft="7dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="My votes/comments"
+            android:id="@+id/txt_my_comments_and_votes"
+            android:layout_row="3"
+            android:layout_column="6"
+            android:layout_gravity="center_horizontal"
+            android:textSize="13dp" />
+
+        <ImageButton
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:id="@+id/btn_nearby"
+            android:layout_row="5"
+            android:layout_column="1"
+            android:src="@mipmap/nearby_complaints"
+            android:background="?android:selectableItemBackground"
+            android:scaleType="fitXY"
+            android:onClick="OpenNearbyIssues"
+            android:layout_gravity="center_horizontal" />
+
+        <ImageButton
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:id="@+id/btn_latest"
+            android:layout_row="5"
+            android:layout_column="3"
+            android:src="@mipmap/latest_complaints"
+            android:background="?android:selectableItemBackground"
+            android:scaleType="fitXY"
+            android:layout_gravity="center_horizontal"
+            android:onClick="OpenLatestComplaint"
+            android:layout_marginLeft="10dp" />
+
+        <ImageButton
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:id="@+id/btn_spotlit"
+            android:layout_row="5"
+            android:layout_column="6"
+            android:src="@mipmap/spotlit_issues"
+            android:background="?android:selectableItemBackground"
+            android:scaleType="fitXY"
+            android:layout_gravity="center_horizontal"
+            android:onClick="OpenPriorityComplaints" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Nearby complaints"
+            android:id="@+id/txt_nearby"
+            android:layout_row="6"
+            android:layout_column="1"
+            android:layout_gravity="center_horizontal"
+            android:textSize="13dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="All complaints"
+            android:id="@+id/txt_latest"
+            android:layout_row="6"
+            android:layout_column="3"
+            android:layout_gravity="center_horizontal"
+            android:textSize="13dp"
+            android:layout_marginLeft="7dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Prioritised complaints"
+            android:id="@+id/txt_spotlit"
+            android:layout_row="6"
+            android:layout_column="6"
+            android:layout_gravity="center_horizontal"
+            android:textSize="13dp" />
+
+    </GridLayout>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/listViewHomeLatest"
+        android:layout_alignRight="@+id/gridLayout"
+        android:layout_alignEnd="@+id/gridLayout"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:divider="#ccd7e3"
+        android:dividerHeight="6.0sp"
+        android:paddingBottom="8dp"
+        android:paddingLeft="5dp"
+        android:paddingTop="5dp"
+        android:paddingRight="5dp"
+        android:headerDividersEnabled="true"
+        android:footerDividersEnabled="true"
+        android:clickable="false"
+        android:background="#ffffff"
+        android:layout_below="@+id/txtLatestTitle"
+        android:layout_above="@+id/textView6" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="18dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="                                          Latest"
+        android:id="@+id/txtLatestTitle"
+        android:background="#FF2980B9"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        android:layout_alignLeft="@+id/listViewHomeLatest"
+        android:layout_alignStart="@+id/listViewHomeLatest"
+        android:layout_alignRight="@+id/listViewHomeLatest"
+        android:layout_alignEnd="@+id/listViewHomeLatest"
+        android:textSize="15dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="3dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="8dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/textView6"
+        android:background="#FF2980B9"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        android:textSize="15dp"
+        android:layout_alignLeft="@+id/listViewHomeLatest"
+        android:layout_alignStart="@+id/listViewHomeLatest"
+        android:layout_alignTop="@+id/gridLayout"
+        android:layout_alignRight="@+id/listViewHomeLatest"
+        android:layout_alignEnd="@+id/listViewHomeLatest"
+        android:layout_marginBottom="10dp" />
+
+</RelativeLayout>

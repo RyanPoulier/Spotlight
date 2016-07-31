@@ -1,0 +1,105 @@
+<RelativeLayout
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="#ffffff">
+
+    <GridLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/gridLayout1"
+        android:background="#e6ebf0">
+
+        <AutoCompleteTextView
+            android:layout_width="308dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtSearch"
+            android:layout_above="@+id/map"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:layout_gravity="center"
+            android:background="@drawable/write_text"
+            android:hint="Enter address here"
+            android:textColorHint="#b1bec6"
+            android:singleLine="true"
+            android:layout_marginLeft="6dp"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <ImageButton
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            style="?attr/buttonStyleSmall"
+            android:id="@+id/btn_Map_Search"
+            android:src="@mipmap/location_search"
+            android:onClick="onSearch"
+            android:layout_alignTop="@+id/txtSearch"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_row="0"
+            android:layout_column="1"
+            android:layout_gravity="center"
+            android:background="?android:selectableItemBackground"/>
+
+        </GridLayout>
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/gridLayout2"
+        android:layout_below="@+id/gridLayout1"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:background="#ffffff"
+        android:useDefaultMargins="false"
+        android:rowOrderPreserved="false">
+
+        <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:map="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="350dp"
+            android:layout_height="340dp"
+            tools:context="ryanpoulier.spotlight2.New_Complaint_Location"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_row="1"
+            android:layout_column="0"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="*Enter an address in order to specify the issue location. The entered address is displayed as a pin on the map."
+            android:id="@+id/textView13"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp" />
+
+        <Button
+            android:layout_width="222dp"
+            android:layout_height="50dp"
+            android:text="NEXT"
+            android:id="@+id/btn_issue_location_next"
+            android:layout_row="2"
+            android:layout_column="0"
+            android:background="#2980b9"
+            android:textColor="#ffffff"
+            android:textSize="25dp"
+            android:onClick="OpenNewComplaintSuggest"
+            android:layout_below="@+id/map"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center" />
+    </GridLayout>
+
+</RelativeLayout>
