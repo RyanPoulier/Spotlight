@@ -53,3 +53,6 @@ captures/
 
 ### Android Patch ###
 gen-external-apklibs
+
+### RestAPI ###
+RestAPI/target/
