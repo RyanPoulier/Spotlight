@@ -6,6 +6,8 @@
     <string name="title_activity_nearby_issues">Spotlight</string>
     <string name="title_activity_new__complaint__location">Spotlight</string>
     <string name="title_activity_login">Sign in</string>
+    <string name="drawer_open">Opened</string>
+    <string name="drawer_close">Closed</string>
 
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>

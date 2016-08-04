@@ -5,4 +5,10 @@
     <color name="accent_material_light">#07b1a2</color>
     <color name="primary_material_dark">#2980b9</color>
     <color name="primary_dark_material_dark">#1f71a7</color>
+    <color name="list_divider">#1f71a7</color>
+    <color name="list_background">#1f71a7</color>
+    <color name="list_background_pressed">#1f71a7</color>
+    <color name="counter_text_bg">#1f71a7</color>
+    <color name="list_item_title">#1f71a7</color>
+    <color name="counter_text_color">#1f71a7</color>
 </resources>

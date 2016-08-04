@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array
-        name="issue_types">
+    <string-array name="issue_types">
 
         <item>Household waste (garbage) dump</item>
         <item>Industrial waste dump</item>
@@ -20,44 +19,62 @@
         <item>Fallen tree</item>
     </string-array>
 
-    <string-array
-        name="complaintanonymity">
+    <string-array name="complaintanonymity">
         <item>Always show my details when submitting complaints</item>
         <item>Always submit new complaints anonymously/without my details</item>
         <item>Ask me every time</item>
     </string-array>
 
-    <string-array
-        name="commmentanonymity">
+    <string-array name="commmentanonymity">
         <item>Always show my details when posting comments</item>
         <item>Always post comments anonymously/without my details</item>
         <item>Ask me every time</item>
     </string-array>
 
-    <string-array
-        name="userrequests">
+    <string-array name="userrequests">
         <item>Allow other users to send me requests</item>
         <item>Do not allow other users to send me requests</item>
     </string-array>
 
-    <string-array
-        name="sortoptions">
+    <string-array name="sortoptions">
         <item>Latest</item>
         <item>Issue type</item>
         <item>Status</item>
     </string-array>
 
-    <string-array
-        name="abuse_types">
+    <string-array name="abuse_types">
         <item>This issue has already been resolved</item>
         <item>Offensive material</item>
     </string-array>
 
-    <string-array
-        name="delete_types">
+    <string-array name="delete_types">
         <item>Issue has already been reported previously by another user</item>
         <item>Issue was resolved by GoSL</item>
         <item>I do not wish to state a reason</item>
     </string-array>
 
-    </resources>
+    <!-- Nav Drawer Menu Items -->
+    <string-array name="nav_drawer_items">
+        <item>Home</item>
+        <item>Find People</item>
+        <item>Photos</item>
+        <item>Communities</item>
+        <item>Pages</item>
+        <item>What\'s Hot</item>
+    </string-array>
+
+    <!-- Nav Drawer List Item Icons -->
+    <!-- Keep them in order as the titles are in -->
+    <array name="nav_drawer_icons">
+        <!--<item>@drawable/ic_home</item>-->
+        <!--<item>@drawable/ic_people</item>-->
+        <!--<item>@drawable/ic_photos</item>-->
+        <!--<item>@drawable/ic_communities</item>-->
+        <!--<item>@drawable/ic_pages</item>-->
+        <!--<item>@drawable/ic_whats_hot</item>-->
+    </array>
+
+    <!-- Content Description -->
+    <string name="desc_list_item_icon">Item Icon</string>
+
+</resources>

@@ -1,54 +1,125 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    tools:context=".Home"
-    android:id="@+id/myRelativeLayout">
+<android.support.v4.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/drawerLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
+    <!-- The main content view -->
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools" android:id="@+id/mainContent"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        tools:context=".Home">
 
-    <GridLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/gridLayout"
-        android:layout_alignParentBottom="true"
-        android:useDefaultMargins="false"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginLeft="2dp"
-        android:layout_marginRight="2dp"
-        android:layout_marginBottom="2dp"
-        android:background="#ffffff">
+        <GridLayout
+            android:id="@+id/gridLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="2dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:background="#ffffff"
+            android:useDefaultMargins="false">
 
-    </GridLayout>
+        </GridLayout>
 
-    <ListView
-        android:layout_width="match_parent"
+        <ListView
+            android:id="@+id/listViewHomeLatest"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignEnd="@+id/gridLayout"
+            android:layout_alignRight="@+id/gridLayout"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:background="#ffffff"
+            android:clickable="false"
+            android:divider="#ccd7e3"
+            android:dividerHeight="1.0sp"
+            android:footerDividersEnabled="true"
+            android:headerDividersEnabled="true"
+            android:paddingBottom="8dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:paddingTop="5dp"/>
+
+        <Button
+            android:id="@+id/btn_new_complaint"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_alignEnd="@+id/gridLayout"
+            android:layout_alignParentBottom="true"
+            android:layout_alignRight="@+id/gridLayout"
+            android:background="@mipmap/new_complaint" />
+
+    </RelativeLayout>
+
+    <!-- The navigation drawer -->
+    <RelativeLayout
+        android:layout_width="280dp"
         android:layout_height="match_parent"
-        android:id="@+id/listViewHomeLatest"
-        android:layout_alignRight="@+id/gridLayout"
-        android:layout_alignEnd="@+id/gridLayout"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:divider="#ccd7e3"
-        android:dividerHeight="1.0sp"
-        android:paddingBottom="8dp"
-        android:paddingLeft="5dp"
-        android:paddingTop="5dp"
-        android:paddingRight="5dp"
-        android:headerDividersEnabled="true"
-        android:footerDividersEnabled="true"
-        android:clickable="false"
-        android:background="#ffffff"
-        android:layout_alignParentStart="true" />
+        android:id="@+id/drawerPane"
+        android:layout_gravity="start">
 
-    <Button
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:id="@+id/btn_new_complaint"
-        android:background="@mipmap/new_complaint"
-        android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/gridLayout"
-        android:layout_alignEnd="@+id/gridLayout" />
+        <!-- Profile Box -->
 
-</RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/profileBox"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="@color/material_blue_grey_800"
+            android:padding="8dp" >
+
+            <ImageView
+                android:id="@+id/avatar"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@mipmap/latest_complaints"
+                android:layout_marginTop="15dp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="42dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="15dp"
+                android:layout_toRightOf="@+id/avatar"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/userName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Feed"
+                    android:textColor="#fff"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/desc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_marginTop="4dp"
+                    android:text="View Latest Complaints"
+                    android:textColor="#fff"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <!-- List of Actions (pages) -->
+        <ListView
+            android:id="@+id/navList"
+            android:layout_width="280dp"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/profileBox"
+            android:choiceMode="singleChoice"
+            android:background="#ffffffff" />
+
+    </RelativeLayout>
+
+</android.support.v4.widget.DrawerLayout>
+

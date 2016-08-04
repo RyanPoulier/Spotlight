@@ -1,11 +1,15 @@
 package ryanpoulier.spotlight2;
 
+import android.app.Fragment;
+import android.app.FragmentManager;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
+import android.content.res.TypedArray;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -13,8 +17,11 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.ArrayList;
 
 public class Home extends AppCompatActivity {
     ListView listview;
@@ -24,10 +31,17 @@ public class Home extends AppCompatActivity {
     DBhelper DBhelper;
     String id,title, timestamp,transferID;
 
+    ListView mDrawerList;
+    RelativeLayout mDrawerPane;
+    private ActionBarDrawerToggle mDrawerToggle;
+    private DrawerLayout mDrawerLayout;
+    ArrayList<NavItem> mNavItems = new ArrayList<NavItem>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         listview = (ListView) findViewById(R.id.listViewHomeLatest);
         lsd = new ListDataAdapter(getApplicationContext(), R.layout.latest_list_row);
@@ -45,10 +59,10 @@ public class Home extends AppCompatActivity {
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                transferID = ((TextView) view.findViewById(R.id.txtID)).getText().toString();
-                storeIDRef();
-                Intent intent = new Intent(Home.this, ComplaintDetails.class);
-                startActivity(intent);
+//                transferID = ((TextView) view.findViewById(R.id.txtID)).getText().toString();
+//                storeIDRef();
+//                Intent intent = new Intent(Home.this, ComplaintDetails.class);
+//                startActivity(intent);
             }
         });
 
@@ -63,14 +77,86 @@ public class Home extends AppCompatActivity {
 
         if (cursor.moveToFirst()) {
             do {
-                id= cursor.getString(0);
-                title= cursor.getString(1);
-                timestamp=cursor.getString(2);
-                DataProvider dataProvider = new DataProvider(title,timestamp, id);
+                id = cursor.getString(0);
+                title = cursor.getString(1);
+                timestamp = cursor.getString(2);
+                DataProvider dataProvider = new DataProvider(title, timestamp, id);
                 lsd.add(dataProvider);
             }
             while (cursor.moveToNext());
         }
+        //Slider
+        mNavItems.add(new NavItem("Nearby Complaints", "", R.mipmap.nearby_complaints));
+        mNavItems.add(new NavItem("My Complaints", "", R.mipmap.my_complaints));
+
+
+        // DrawerLayout
+        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
+
+        // Populate the Navigtion Drawer with options
+        mDrawerPane = (RelativeLayout) findViewById(R.id.drawerPane);
+        mDrawerList = (ListView) findViewById(R.id.navList);
+        DrawerListAdapter adapter = new DrawerListAdapter(this, mNavItems);
+        mDrawerList.setAdapter(adapter);
+
+        // Drawer Item click listeners
+        mDrawerList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                selectItemFromDrawer(position);
+                //OpenNearbyIssues(view);
+            }
+        });
+
+        mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, R.string.drawer_open, R.string.drawer_close) {
+            @Override
+            public void onDrawerOpened(View drawerView) {
+                super.onDrawerOpened(drawerView);
+                invalidateOptionsMenu();
+            }
+
+            @Override
+            public void onDrawerClosed(View drawerView) {
+                super.onDrawerClosed(drawerView);
+                Log.d("aa", "onDrawerClosed: " + getTitle());
+
+                invalidateOptionsMenu();
+            }
+        };
+
+        mDrawerLayout.setDrawerListener(mDrawerToggle);
+        //mDrawerToggle.setDrawerIndicatorEnabled(false);
+        mDrawerToggle.setHomeAsUpIndicator(R.drawable.ic_reorder_black_24dp);
+        mDrawerToggle.syncState();
+    }
+
+    private void selectItemFromDrawer(int position) {
+        Fragment fragment = new PreferencesFragment();
+
+        FragmentManager fragmentManager = getFragmentManager();
+        fragmentManager.beginTransaction()
+                .replace(R.id.mainContent, fragment)
+                .commit();
+
+        mDrawerList.setItemChecked(position, true);
+        setTitle(mNavItems.get(position).mTitle);
+
+        // Close the drawer
+        mDrawerLayout.closeDrawer(mDrawerPane);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Pass the event to ActionBarDrawerToggle
+        // If it returns true, then it has handled
+        // the nav drawer indicator touch event
+        if (mDrawerToggle.onOptionsItemSelected(item)) {
+            return true;
+        }
+
+        // Handle your other action bar items...
+
+        return super.onOptionsItemSelected(item);
     }
 
     public void OpenNewComplaint (View view){
@@ -120,20 +206,20 @@ public class Home extends AppCompatActivity {
         return true;
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.user_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
+//    @Override
+//    public boolean onOptionsItemSelected(MenuItem item) {
+//        // Handle action bar item clicks here. The action bar will
+//        // automatically handle clicks on the Home/Up button, so long
+//        // as you specify a parent activity in AndroidManifest.xml.
+//        int id = item.getItemId();
+//
+//        //noinspection SimplifiableIfStatement
+//        if (id == R.id.user_settings) {
+//            return true;
+//        }
+//
+//        return super.onOptionsItemSelected(item);
+//    }
 
     public void OpenCitizenLeaderboard(MenuItem item) {
         Intent intent=new Intent (this,CitizenLeaderboard.class);
@@ -171,7 +257,6 @@ public class Home extends AppCompatActivity {
         editortitle.putString("complainttitle", title.toString());
         editortitle.apply();
         Toast.makeText(this, "Title recorded", Toast.LENGTH_LONG).show();
-
 
     }
 }
