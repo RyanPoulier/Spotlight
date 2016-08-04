@@ -77,7 +77,7 @@
         android:layout_marginBottom="3dp" />
 
     <ImageButton
-        android:layout_width="110dp"
+        android:layout_width="50dp"
         android:layout_height="40dp"
         android:id="@+id/btn_summaryvote"
         android:src="@mipmap/vote_icon"
@@ -88,19 +88,20 @@
         android:layout_alignTop="@+id/btn_summarycomment"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginLeft="5dp" />
+        android:layout_toLeftOf="@+id/t_issue_type"
+        android:layout_toStartOf="@+id/t_issue_type"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp" />
 
     <ImageButton
-        android:layout_width="110dp"
+        android:layout_width="50dp"
         android:layout_height="40dp"
         android:id="@+id/btn_summarycomment"
         android:src="@mipmap/comment_icon"
         android:background="?android:selectableItemBackground"
         android:layout_below="@+id/textView43"
-        android:layout_marginTop="20dp"
         android:layout_toRightOf="@+id/btn_summaryvote"
-        android:layout_toEndOf="@+id/btn_summaryvote"
-        android:layout_marginLeft="3dp" />
+        android:layout_toEndOf="@+id/btn_summaryvote" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -114,15 +115,14 @@
         android:layout_toEndOf="@+id/t_issue_type" />
 
     <ImageButton
-        android:layout_width="110dp"
+        android:layout_width="50dp"
         android:layout_height="40dp"
         android:id="@+id/btn_summaryshare"
         android:src="@mipmap/share_icon"
         android:background="?android:selectableItemBackground"
-        android:layout_alignTop="@+id/btn_summarycomment"
+        android:layout_below="@+id/textView43"
         android:layout_toRightOf="@+id/btn_summarycomment"
-        android:layout_toEndOf="@+id/btn_summarycomment"
-        android:layout_marginLeft="3dp" />
+        android:layout_toEndOf="@+id/btn_summarycomment" />
 
     <TextView
         android:layout_width="wrap_content"

@@ -10,6 +10,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -35,6 +36,12 @@ public class Home extends AppCompatActivity {
         sqLiteDatabase = DBhelper.getReadableDatabase();
         cursor = DBhelper.getSummaryData(sqLiteDatabase);
 
+        lsd.add(new DataProvider("title A", "12:00", "1"));
+        lsd.add(new DataProvider("title B", "17:00", "2"));
+        lsd.add(new DataProvider("title C", "17:00", "2"));
+        lsd.add(new DataProvider("title D", "17:00", "2"));
+        lsd.add(new DataProvider("title E", "17:00", "2"));
+
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -42,6 +49,14 @@ public class Home extends AppCompatActivity {
                 storeIDRef();
                 Intent intent = new Intent(Home.this, ComplaintDetails.class);
                 startActivity(intent);
+            }
+        });
+
+        Button btnNewComplaint = (Button) findViewById(R.id.btn_new_complaint);
+        btnNewComplaint.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                OpenNewComplaint(view);
             }
         });
 
