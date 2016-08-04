@@ -2,6 +2,7 @@ package ryanpoulier.spotlight2;
 
 import android.app.Fragment;
 import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
@@ -46,49 +47,50 @@ public class Home extends AppCompatActivity {
         setContentView(R.layout.activity_home);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        listview = (ListView) findViewById(R.id.listViewHomeLatest);
-        lsd = new ListDataAdapter(getApplicationContext(), R.layout.latest_list_row);
-        listview.setAdapter(lsd);
-        DBhelper = new DBhelper(getApplicationContext());
-        sqLiteDatabase = DBhelper.getReadableDatabase();
-        cursor = DBhelper.getSummaryData(sqLiteDatabase);
 
-        lsd.add(new DataProvider("title A", "12:00", "1"));
-        lsd.add(new DataProvider("title B", "17:00", "2"));
-        lsd.add(new DataProvider("title C", "17:00", "2"));
-        lsd.add(new DataProvider("title D", "17:00", "2"));
-        lsd.add(new DataProvider("title E", "17:00", "2"));
+//        listview = (ListView) findViewById(R.id.listViewHomeLatest);
+//        lsd = new ListDataAdapter(getApplicationContext(), R.layout.latest_list_row);
+//        listview.setAdapter(lsd);
+//        DBhelper = new DBhelper(getApplicationContext());
+//        sqLiteDatabase = DBhelper.getReadableDatabase();
+//        cursor = DBhelper.getSummaryData(sqLiteDatabase);
+//
+//        lsd.add(new DataProvider("title A", "12:00", "1"));
+//        lsd.add(new DataProvider("title B", "17:00", "2"));
+//        lsd.add(new DataProvider("title C", "17:00", "2"));
+//        lsd.add(new DataProvider("title D", "17:00", "2"));
+//        lsd.add(new DataProvider("title E", "17:00", "2"));
 
-        listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//        listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 //                transferID = ((TextView) view.findViewById(R.id.txtID)).getText().toString();
 //                storeIDRef();
 //                Intent intent = new Intent(Home.this, ComplaintDetails.class);
 //                startActivity(intent);
-            }
-        });
+//            }
+//        });
 
-        Button btnNewComplaint = (Button) findViewById(R.id.btn_new_complaint);
-        btnNewComplaint.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                OpenNewComplaint(view);
-            }
-        });
-
-
-        if (cursor.moveToFirst()) {
-            do {
-                id = cursor.getString(0);
-                title = cursor.getString(1);
-                timestamp = cursor.getString(2);
-                DataProvider dataProvider = new DataProvider(title, timestamp, id);
-                lsd.add(dataProvider);
-            }
-            while (cursor.moveToNext());
-        }
-        //Slider
+//        Button btnNewComplaint = (Button) findViewById(R.id.btn_new_complaint);
+//        btnNewComplaint.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                OpenNewComplaint(view);
+//            }
+//        });
+//
+//
+//        if (cursor.moveToFirst()) {
+//            do {
+//                id = cursor.getString(0);
+//                title = cursor.getString(1);
+//                timestamp = cursor.getString(2);
+//                DataProvider dataProvider = new DataProvider(title, timestamp, id);
+//                lsd.add(dataProvider);
+//            }
+//            while (cursor.moveToNext());
+//        }
+//        //Slider
         mNavItems.add(new NavItem("Nearby Complaints", "", R.mipmap.nearby_complaints));
         mNavItems.add(new NavItem("My Complaints", "", R.mipmap.my_complaints));
 
@@ -128,9 +130,15 @@ public class Home extends AppCompatActivity {
         };
 
         mDrawerLayout.setDrawerListener(mDrawerToggle);
-        //mDrawerToggle.setDrawerIndicatorEnabled(false);
         mDrawerToggle.setHomeAsUpIndicator(R.drawable.ic_reorder_black_24dp);
         mDrawerToggle.syncState();
+
+        FragmentManager fragmentManager = getFragmentManager();
+        FragmentTransaction fragmentTransaction =
+                fragmentManager.beginTransaction();
+        Feed ls_fragment = new Feed();
+        fragmentTransaction.replace(R.id.fragment_container, ls_fragment);
+        fragmentTransaction.commit();
     }
 
     private void selectItemFromDrawer(int position) {

@@ -4,59 +4,67 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- The main content view -->
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools" android:id="@+id/mainContent"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/fragment_container"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        tools:context=".Home">
-
-        <GridLayout
-            android:id="@+id/gridLayout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginBottom="2dp"
-            android:layout_marginLeft="2dp"
-            android:layout_marginRight="2dp"
-            android:background="#ffffff"
-            android:useDefaultMargins="false">
-
-        </GridLayout>
-
-        <ListView
-            android:id="@+id/listViewHomeLatest"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_alignEnd="@+id/gridLayout"
-            android:layout_alignRight="@+id/gridLayout"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
-            android:background="#ffffff"
-            android:clickable="false"
-            android:divider="#ccd7e3"
-            android:dividerHeight="1.0sp"
-            android:footerDividersEnabled="true"
-            android:headerDividersEnabled="true"
-            android:paddingBottom="8dp"
-            android:paddingLeft="5dp"
-            android:paddingRight="5dp"
-            android:paddingTop="5dp"/>
-
-        <Button
-            android:id="@+id/btn_new_complaint"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_alignEnd="@+id/gridLayout"
-            android:layout_alignParentBottom="true"
-            android:layout_alignRight="@+id/gridLayout"
-            android:background="@mipmap/new_complaint" />
+        android:orientation="horizontal">
 
     </RelativeLayout>
+    <!-- The main content view -->
+    <!--<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+        <!--xmlns:tools="http://schemas.android.com/tools" android:id="@+id/mainContent"-->
+        <!--android:layout_width="fill_parent"-->
+        <!--android:layout_height="fill_parent"-->
+        <!--tools:context=".Home">-->
+
+        <!--<GridLayout-->
+            <!--android:id="@+id/gridLayout"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_alignParentBottom="true"-->
+            <!--android:layout_alignParentEnd="true"-->
+            <!--android:layout_alignParentLeft="true"-->
+            <!--android:layout_alignParentRight="true"-->
+            <!--android:layout_alignParentStart="true"-->
+            <!--android:layout_marginBottom="2dp"-->
+            <!--android:layout_marginLeft="2dp"-->
+            <!--android:layout_marginRight="2dp"-->
+            <!--android:background="#ffffff"-->
+            <!--android:useDefaultMargins="false">-->
+
+        <!--</GridLayout>-->
+
+        <!--<ListView-->
+            <!--android:id="@+id/listViewHomeLatest"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_alignEnd="@+id/gridLayout"-->
+            <!--android:layout_alignRight="@+id/gridLayout"-->
+            <!--android:layout_marginLeft="8dp"-->
+            <!--android:layout_marginRight="8dp"-->
+            <!--android:background="#ffffff"-->
+            <!--android:clickable="false"-->
+            <!--android:divider="#ccd7e3"-->
+            <!--android:dividerHeight="1.0sp"-->
+            <!--android:footerDividersEnabled="true"-->
+            <!--android:headerDividersEnabled="true"-->
+            <!--android:paddingBottom="8dp"-->
+            <!--android:paddingLeft="5dp"-->
+            <!--android:paddingRight="5dp"-->
+            <!--android:paddingTop="5dp"/>-->
+
+        <!--<Button-->
+            <!--android:id="@+id/btn_new_complaint"-->
+            <!--android:layout_width="70dp"-->
+            <!--android:layout_height="70dp"-->
+            <!--android:layout_alignEnd="@+id/gridLayout"-->
+            <!--android:layout_alignParentBottom="true"-->
+            <!--android:layout_alignRight="@+id/gridLayout"-->
+            <!--android:background="@mipmap/new_complaint" />-->
+
+    <!--</RelativeLayout>-->
 
     <!-- The navigation drawer -->
     <RelativeLayout
