@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/listViewMyComplaints"
+        android:divider="#ccd7e3"
+        android:dividerHeight="8.0sp"
+        android:background="#ffffff"
+        android:paddingLeft="5dp"
+        android:paddingTop="5dp"
+        android:paddingRight="2dp"
+        android:paddingBottom="5dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/spmycomplaintsrefine" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Sort by:"
+        android:id="@+id/textView71"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textColor="#000000"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="10dp"
+        android:textStyle="bold" />
+
+    <Spinner
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:id="@+id/spinnerMyComplaints"
+        android:spinnerMode="dropdown"
+        android:entries="@array/sortoptions"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_toRightOf="@+id/textView71"
+        android:layout_toEndOf="@+id/textView71"
+        android:layout_alignParentTop="true" />
+
+    <Spinner
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:id="@+id/spmycomplaintsrefine"
+        android:spinnerMode="dropdown"
+        android:entries="@array/issue_types"
+        android:layout_below="@+id/spinnerMyComplaints"
+        android:layout_alignLeft="@+id/spinnerMyComplaints"
+        android:layout_alignStart="@+id/spinnerMyComplaints"/>
+</LinearLayout>

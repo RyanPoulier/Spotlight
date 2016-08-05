@@ -1,10 +1,12 @@
 package ryanpoulier.spotlight2;
 
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.location.Address;
 import android.location.Geocoder;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -72,11 +74,21 @@ public class Nearby_issues extends AppCompatActivity implements OnMapReadyCallba
      * installed Google Play services and returned to the app.
      */
     // code from https://www.youtube.com/watch?v=dr0zEmuDuIk
-   @Override
+    @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
         // Code from https://www.youtube.com/watch?v=92f4c2vHrPg and http://stackoverflow.com/questions/29868121/how-do-i-zoom-in-automatically-to-the-current-location-in-google-map-api-for-and
+        if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            // TODO: Consider calling
+            //    ActivityCompat#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for ActivityCompat#requestPermissions for more details.
+            return;
+        }
         mMap.setMyLocationEnabled(true);
         float zoomLevel = 10;
 

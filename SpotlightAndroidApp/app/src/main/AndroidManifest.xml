@@ -119,7 +119,7 @@
             android:parentActivityName=".Home"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".MyComplaints"
+            android:name=".MyComplaintsOld"
             android:label="My Complaints"
             android:parentActivityName=".Home"
             android:screenOrientation="portrait" />

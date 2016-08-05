@@ -1,15 +1,14 @@
 package ryanpoulier.spotlight2;
 
-import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.res.Configuration;
-import android.content.res.TypedArray;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.os.SystemClock;
+import android.support.v4.app.Fragment;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -19,10 +18,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -142,12 +139,23 @@ public class Home extends AppCompatActivity {
     }
 
     private void selectItemFromDrawer(int position) {
-        Fragment fragment = new PreferencesFragment();
-
         FragmentManager fragmentManager = getFragmentManager();
-        fragmentManager.beginTransaction()
-                .replace(R.id.mainContent, fragment)
-                .commit();
+        switch (position){
+            case 0:
+                NearbyComplaints nearbyComplaints = new NearbyComplaints();
+                fragmentManager.beginTransaction()
+                        .replace(R.id.fragment_container, nearbyComplaints)
+                        .commit();
+                break;
+            case 1:
+                MyComplaints myComplaints = new MyComplaints();
+                fragmentManager.beginTransaction()
+                        .replace(R.id.fragment_container, myComplaints)
+                        .commit();
+                break;
+        }
+        Log.d("Position", position+"");
+
 
         mDrawerList.setItemChecked(position, true);
         setTitle(mNavItems.get(position).mTitle);
@@ -191,7 +199,7 @@ public class Home extends AppCompatActivity {
     }
 
     public void OpenMyComplaints (View view){
-        Intent intent=new Intent (this, MyComplaints.class);
+        Intent intent=new Intent (this, MyComplaintsOld.class);
         startActivity(intent);
     }
 
