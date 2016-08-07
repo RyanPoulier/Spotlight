@@ -95,3 +95,6 @@ captures/
 
 # Keystore files
 *.jks
+
+### RestAPI ###
+RestAPI/target/
