@@ -24,13 +24,13 @@ public class DBTest {
         DBCollection table = db.getCollection("user");
 
         BasicDBObject document = new BasicDBObject();
-        document.put("name", "toxic");
-        document.put("age", 25);
+        document.put("name", "Padmaka");
+        document.put("age", 24);
         document.put("createdDate", new Date());
         table.insert(document);
 
         BasicDBObject searchQuery = new BasicDBObject();
-        searchQuery.put("name", "toxic");
+        searchQuery.put("name", "Padmaka");
 
         DBCursor cursor = table.find(searchQuery);
 

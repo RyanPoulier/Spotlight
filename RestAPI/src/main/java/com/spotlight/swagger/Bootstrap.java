@@ -13,8 +13,8 @@ public class Bootstrap extends HttpServlet {
 
         BeanConfig beanConfig = new BeanConfig();
         beanConfig.setVersion("1.0.2");
-        beanConfig.setBasePath("https://local.leapset.com:8443/api");
-        beanConfig.setResourcePackage("com.spotlight.api");
+        beanConfig.setBasePath("http://localhost:9090/api");
+        beanConfig.setResourcePackage("com.spotlight");
         beanConfig.setScan(true);
     }
 }
