@@ -1,8 +1,14 @@
 package com.spotlight.core.dao.impl;
 
+import com.mongodb.BasicDBObject;
+import com.mongodb.DB;
+import com.mongodb.DBCollection;
+import com.mongodb.Mongo;
 import com.spotlight.core.beans.Issue;
 import com.spotlight.core.dao.IssueDao;
+import org.apache.log4j.Logger;
 
+import java.net.UnknownHostException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -11,9 +17,15 @@ import java.util.Map;
  */
 public class IssueDaoImpl implements IssueDao {
 
+    private static final Logger LOGGER = Logger.getLogger(IssueDaoImpl.class);
 
     @Override
-    public Issue saveIssue(Issue issue) {
+    public Issue saveIssue(Issue issue) throws UnknownHostException {
+
+        Mongo mongo = new Mongo("localhost", 27017);
+        DB db = mongo.getDB("test-db");
+
+        DBCollection collection = db.getCollection("issue");
 
         Map<String, Object> issueDoc = new HashMap<>();
         issueDoc.put("title", issue.getTitle());
@@ -28,6 +40,8 @@ public class IssueDaoImpl implements IssueDao {
         issueDoc.put("closureDate", issue.getClosureDate());
         issueDoc.put("closureRating", issue.getClosureRating());
 
+        collection.insert(new BasicDBObject(issueDoc));
+        mongo.close();
 
         return null;
     }
