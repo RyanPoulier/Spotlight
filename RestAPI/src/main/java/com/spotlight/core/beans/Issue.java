@@ -1,5 +1,7 @@
 package com.spotlight.core.beans;
 
+import com.google.gson.Gson;
+
 /**
  * Created by Padmaka on 8/1/16.
  */
@@ -113,5 +115,10 @@ public class Issue {
 
     public void setClosureDate(long closureDate) {
         this.closureDate = closureDate;
+    }
+
+    @Override
+    public String toString() {
+        return new Gson().toJson(this);
     }
 }

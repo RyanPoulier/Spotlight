@@ -1,15 +1,20 @@
 package com.spotlight.core.dao.impl;
 
+import com.google.gson.Gson;
+import com.google.gson.JsonParser;
 import com.mongodb.BasicDBObject;
 import com.mongodb.DB;
 import com.mongodb.DBCollection;
+import com.mongodb.DBCursor;
 import com.mongodb.Mongo;
 import com.spotlight.core.beans.Issue;
 import com.spotlight.core.dao.IssueDao;
 import org.apache.log4j.Logger;
 
 import java.net.UnknownHostException;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -43,6 +48,29 @@ public class IssueDaoImpl implements IssueDao {
         collection.insert(new BasicDBObject(issueDoc));
         mongo.close();
 
+        LOGGER.info("Issue " + issue.getId() + " saved.");
+
         return null;
+    }
+
+    @Override
+    public List<Issue> getIssues() throws UnknownHostException {
+
+        Mongo mongo = new Mongo("localhost", 27017);
+        DB db = mongo.getDB("test-db");
+        List<Issue> issues = new ArrayList<>();
+        Gson gson = new Gson();
+        JsonParser parser = new JsonParser();
+
+        DBCollection collection = db.getCollection("issue");
+
+        DBCursor cursor = collection.find();
+        while(cursor.hasNext()) {
+            String issueString = cursor.next().toString();
+            Issue issue = gson.fromJson(parser.parse(issueString).getAsJsonObject(), Issue.class);
+            issues.add(issue);
+        }
+
+        return issues;
     }
 }
