@@ -1,4 +1,4 @@
-package com.spotlight.beans.model;
+package com.spotlight.core.beans;
 
 import java.sql.Timestamp;
 

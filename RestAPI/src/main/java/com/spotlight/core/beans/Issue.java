@@ -1,4 +1,6 @@
-package com.spotlight.beans.model;
+package com.spotlight.core.beans;
+
+import com.google.gson.Gson;
 
 /**
  * Created by Padmaka on 8/1/16.
@@ -12,8 +14,11 @@ public class Issue {
     private double longitude;
     private double latitude;
     private int votes;
+    private long modifiedTime;
+    private int estimatedDates;
+    private long actualResolutionDate;
+    private long closureDate;
     private int closureRating;
-    private String closureDescription;
 
 
     public int getId() {
@@ -80,11 +85,40 @@ public class Issue {
         this.closureRating = closureRating;
     }
 
-    public String getClosureDescription() {
-        return closureDescription;
+    public long getModifiedTime() {
+        return modifiedTime;
     }
 
-    public void setClosureDescription(String closureDescription) {
-        this.closureDescription = closureDescription;
+    public void setModifiedTime(long modifiedTime) {
+        this.modifiedTime = modifiedTime;
+    }
+
+    public int getEstimatedDates() {
+        return estimatedDates;
+    }
+
+    public void setEstimatedDates(int estimatedDates) {
+        this.estimatedDates = estimatedDates;
+    }
+
+    public long getActualResolutionDate() {
+        return actualResolutionDate;
+    }
+
+    public void setActualResolutionDate(long actualResolutionDate) {
+        this.actualResolutionDate = actualResolutionDate;
+    }
+
+    public long getClosureDate() {
+        return closureDate;
+    }
+
+    public void setClosureDate(long closureDate) {
+        this.closureDate = closureDate;
+    }
+
+    @Override
+    public String toString() {
+        return new Gson().toJson(this);
     }
 }

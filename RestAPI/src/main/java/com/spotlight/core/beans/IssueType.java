@@ -1,9 +1,9 @@
-package com.spotlight.beans.model;
+package com.spotlight.core.beans;
 
 /**
  * Created by Padmaka on 8/1/16.
  */
-public class Badge {
+public class IssueType {
 
     private int id;
     private String title;
