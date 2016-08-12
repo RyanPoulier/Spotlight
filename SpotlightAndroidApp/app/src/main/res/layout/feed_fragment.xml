@@ -42,11 +42,13 @@
 
     <Button
         android:id="@+id/btn_new_complaint"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:layout_alignEnd="@+id/gridLayout"
         android:layout_alignParentBottom="true"
         android:layout_alignRight="@+id/gridLayout"
-        android:background="@mipmap/new_complaint" />
+        android:background="@mipmap/new_complaint_new"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp" />
 
 </RelativeLayout>

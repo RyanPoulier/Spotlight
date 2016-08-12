@@ -88,6 +88,7 @@ public class Home extends AppCompatActivity {
 //            while (cursor.moveToNext());
 //        }
 //        //Slider
+        mNavItems.add(new NavItem("Home", "", R.mipmap.latest_complaints));
         mNavItems.add(new NavItem("Nearby Complaints", "", R.mipmap.nearby_complaints));
         mNavItems.add(new NavItem("My Complaints", "", R.mipmap.my_complaints));
 
@@ -142,12 +143,16 @@ public class Home extends AppCompatActivity {
         FragmentManager fragmentManager = getFragmentManager();
         switch (position){
             case 0:
+                Feed feed = new Feed();
+                fragmentManager.beginTransaction().replace(R.id.fragment_container, feed).commit();
+                break;
+            case 1:
                 NearbyComplaints nearbyComplaints = new NearbyComplaints();
                 fragmentManager.beginTransaction()
                         .replace(R.id.fragment_container, nearbyComplaints)
                         .commit();
                 break;
-            case 1:
+            case 2:
                 MyComplaints myComplaints = new MyComplaints();
                 fragmentManager.beginTransaction()
                         .replace(R.id.fragment_container, myComplaints)
