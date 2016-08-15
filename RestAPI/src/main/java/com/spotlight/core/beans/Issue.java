@@ -7,7 +7,7 @@ import com.google.gson.Gson;
  */
 public class Issue {
 
-    private int id;
+    private ID _id;
     private String title;
     private String description;
     private String address;
@@ -21,12 +21,12 @@ public class Issue {
     private int closureRating;
 
 
-    public int getId() {
-        return id;
+    public ID get_id() {
+        return _id;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void set_id(ID _id) {
+        this._id = _id;
     }
 
     public String getTitle() {

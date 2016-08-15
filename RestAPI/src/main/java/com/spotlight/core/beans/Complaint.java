@@ -1,22 +1,24 @@
 package com.spotlight.core.beans;
 
 import java.sql.Timestamp;
+import java.util.List;
 
 /**
  * Created by Padmaka on 8/1/16.
  */
 public class Complaint {
 
-    private int id;
+    private ID _id;
     private Timestamp createdDate;
+    private List<String> issueIds;
 
 
-    public int getId() {
-        return id;
+    public ID get_id() {
+        return _id;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void set_id(ID _id) {
+        this._id = _id;
     }
 
     public Timestamp getCreatedDate() {
@@ -25,5 +27,13 @@ public class Complaint {
 
     public void setCreatedDate(Timestamp createdDate) {
         this.createdDate = createdDate;
+    }
+
+    public List<String> getIssueIds() {
+        return issueIds;
+    }
+
+    public void setIssueIds(List<String> issueIds) {
+        this.issueIds = issueIds;
     }
 }

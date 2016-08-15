@@ -1,6 +1,8 @@
 package com.spotlight.core.dao;
 
+import com.spotlight.core.beans.ID;
 import com.spotlight.core.beans.Issue;
+import scala.util.parsing.combinator.testing.Str;
 
 import java.net.UnknownHostException;
 import java.util.ArrayList;
@@ -13,4 +15,6 @@ public interface IssueDao {
 
     Issue saveIssue(Issue issue) throws UnknownHostException;
     List<Issue> getIssues() throws UnknownHostException;
+    Issue getIssue(String id) throws UnknownHostException;
+    Issue getIssue(Issue issue) throws UnknownHostException;
 }
