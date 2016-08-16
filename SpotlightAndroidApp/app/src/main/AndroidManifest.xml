@@ -19,7 +19,7 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="Spotlight"
+        android:label="Spotlight.V2"
         android:largeHeap="true"
         android:theme="@style/AppTheme">
         <activity

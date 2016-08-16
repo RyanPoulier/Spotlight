@@ -91,6 +91,8 @@ public class Home extends AppCompatActivity {
         mNavItems.add(new NavItem("Home", "", R.mipmap.latest_complaints));
         mNavItems.add(new NavItem("Nearby Complaints", "", R.mipmap.nearby_complaints));
         mNavItems.add(new NavItem("My Complaints", "", R.mipmap.my_complaints));
+        mNavItems.add(new NavItem("My Votes/Comments", "", R.mipmap.my_comments_and_votes));
+        mNavItems.add(new NavItem("Priority Chart", "", R.mipmap.spotlit_issues));
 
 
         // DrawerLayout
