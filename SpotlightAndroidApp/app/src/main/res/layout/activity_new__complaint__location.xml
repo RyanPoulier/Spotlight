@@ -66,7 +66,7 @@
             android:name="com.google.android.gms.maps.SupportMapFragment"
             android:layout_width="350dp"
             android:layout_height="340dp"
-            tools:context="ryanpoulier.spotlight3.New_Complaint_Location"
+            tools:context="ryanpoulier.spotlight2.New_Complaint_Location"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_row="1"

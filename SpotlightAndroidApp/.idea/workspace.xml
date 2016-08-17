@@ -45,114 +45,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="43410b06-e7d0-4cf2-ab06-bdf2ba6c6d9c" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/androidTest/java/ryanpoulier/spotlight2/ApplicationTest.java" afterPath="$PROJECT_DIR$/app/src/androidTest/java/ryanpoulier/spotlight3/ApplicationTest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight2/About.java" afterPath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight3/About.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight2/Chart.java" afterPath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight3/Chart.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight2/CitizenLeaderboard.java" afterPath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight3/CitizenLeaderboard.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight2/CloseComplaintDescription.java" afterPath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight3/CloseComplaintDescription.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight2/CloseComplaintDetails.java" afterPath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight3/CloseComplaintDetails.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight2/CloseComplaintPhoto.java" afterPath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight3/CloseComplaintPhoto.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight2/CloseComplaintPhotoOption.java" afterPath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight3/CloseComplaintPhotoOption.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight2/CloseComplaintPreview.java" afterPath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight3/CloseComplaintPreview.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight2/CloseComplaintVideo.java" afterPath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight3/CloseComplaintVideo.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight2/CloseComplaintVideoOption.java" afterPath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight3/CloseComplaintVideoOption.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight2/Comment.java" afterPath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight3/Comment.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight2/CommentsDataAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight3/CommentsDataAdapter.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight2/Complaint.java" afterPath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight3/Complaint.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight2/ComplaintDetails.java" afterPath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight3/ComplaintDetails.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight2/ComplaintReport.java" afterPath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight3/ComplaintReport.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight2/ComplaintSuggestDataAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight3/ComplaintSuggestDataAdapter.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight2/DBhelper.java" afterPath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight3/DBhelper.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight2/DataProvider.java" afterPath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight3/DataProvider.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight2/DeleteComplaint.java" afterPath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight3/DeleteComplaint.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight2/DrawerListAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight3/DrawerListAdapter.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight2/Feed.java" afterPath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight3/Feed.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight2/Home.java" afterPath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight3/Home.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight2/Latest_Complaints.java" afterPath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight3/Latest_Complaints.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight2/ListDataAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight3/ListDataAdapter.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight2/Login.java" afterPath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight3/Login.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight2/MyComments.java" afterPath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight3/MyComments.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight2/MyCommentsDataAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight3/MyCommentsDataAdapter.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight2/MyComplaintDataAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight3/MyComplaintDataAdapter.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight2/MyComplaints.java" afterPath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight3/MyComplaints.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight2/MyComplaintsOld.java" afterPath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight3/MyComplaintsOld.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight2/MyProfile.java" afterPath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight3/MyProfile.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight2/NavItem.java" afterPath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight3/NavItem.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight2/NearbyComplaints.java" afterPath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight3/NearbyComplaints.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight2/Nearby_issues.java" afterPath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight3/Nearby_issues.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight2/New_Complaint_Description.java" afterPath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight3/New_Complaint_Description.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight2/New_Complaint_Location.java" afterPath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight3/New_Complaint_Location.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight2/New_Complaint_Photo.java" afterPath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight3/New_Complaint_Photo.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight2/New_Complaint_Photo_Option.java" afterPath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight3/New_Complaint_Photo_Option.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight2/New_Complaint_Preview.java" afterPath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight3/New_Complaint_Preview.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight2/New_Complaint_Suggest.java" afterPath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight3/New_Complaint_Suggest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight2/New_Complaint_Video.java" afterPath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight3/New_Complaint_Video.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight2/New_Complaint_Video_Option.java" afterPath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight3/New_Complaint_Video_Option.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight2/New_complaint.java" afterPath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight3/New_complaint.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight2/OfficialsDataAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight3/OfficialsDataAdapter.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight2/PreferencesFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight3/PreferencesFragment.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight2/PrioritisedDataAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight3/PrioritisedDataAdapter.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight2/ReportAbuse.java" afterPath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight3/ReportAbuse.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight2/RequestUpdate.java" afterPath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight3/RequestUpdate.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight2/RequestVotes.java" afterPath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight3/RequestVotes.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight2/ResubmitComplaintPreview.java" afterPath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight3/ResubmitComplaintPreview.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight2/Resubmit_Option.java" afterPath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight3/Resubmit_Option.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight2/ResultsDataAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight3/ResultsDataAdapter.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight2/ResultsDataProvider.java" afterPath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight3/ResultsDataProvider.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight2/SameComplaintDescription.java" afterPath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight3/SameComplaintDescription.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight2/SameComplaintPhoto.java" afterPath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight3/SameComplaintPhoto.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight2/SameComplaintPhotoOption.java" afterPath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight3/SameComplaintPhotoOption.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight2/SameComplaintPreview.java" afterPath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight3/SameComplaintPreview.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight2/SameComplaintVideo.java" afterPath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight3/SameComplaintVideo.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight2/SameComplaintVideoOption.java" afterPath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight3/SameComplaintVideoOption.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight2/SpotlightTest.java" afterPath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight3/SpotlightTest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight2/SuggestComplaintProvider.java" afterPath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight3/SuggestComplaintProvider.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight2/UserSuggestionsDataAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight3/UserSuggestionsDataAdapter.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight2/VotesDataAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight3/VotesDataAdapter.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight2/new_resubmission.java" afterPath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight3/new_resubmission.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/gson_2_6_2.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/multidex_1_0_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/multidex_instrumentation_1_0_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/org_apache_http_legacy_android_23.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/rest/GetResponseCallback.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/rest/PostCallback.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build.gradle" afterPath="$PROJECT_DIR$/app/build.gradle" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout-xlarge/activity_new__complaint__preview.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout-xlarge/activity_new__complaint__preview.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_about.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_about.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_chart.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_chart.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_citizen_leaderboard.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_citizen_leaderboard.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_close__complaint__video__option.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_close__complaint__video__option.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_close_complaint_description.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_close_complaint_description.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_close_complaint_photo.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_close_complaint_photo.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_close_complaint_photo_option.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_close_complaint_photo_option.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_close_complaint_preview.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_close_complaint_preview.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_close_complaint_video.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_close_complaint_video.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_comment.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_comment.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_complaint_details.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_complaint_details.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_delete_complaint.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_delete_complaint.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_latest__complaints.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_latest__complaints.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_my_comments.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_my_comments.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_my_profile.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_my_profile.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_new__complaint__description.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_new__complaint__description.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_new__complaint__location.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_new__complaint__location.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_new__complaint__photo.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_new__complaint__photo.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_new__complaint__photo__option.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_new__complaint__photo__option.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_new__complaint__preview.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_new__complaint__preview.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_new__complaint__suggest.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_new__complaint__suggest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_new__complaint__video.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_new__complaint__video.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_new__complaint__video__option.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_new__complaint__video__option.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_new_complaint.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_new_complaint.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_new_resubmission.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_new_resubmission.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_report_abuse.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_report_abuse.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_request_update.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_request_update.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_request_votes.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_request_votes.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_resubmit__option.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_resubmit__option.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_resubmit_complaint_preview.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_resubmit_complaint_preview.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_same_complaint_description.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_same_complaint_description.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_same_complaint_photo.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_same_complaint_photo.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_same_complaint_photo_option.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_same_complaint_photo_option.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_same_complaint_preview.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_same_complaint_preview.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_same_complaint_video.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_same_complaint_video.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_same_complaint_video_option.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_same_complaint_video_option.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_spotlight_test.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_spotlight_test.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/close_complaint_details.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/close_complaint_details.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_feed_list.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_feed_list.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight2/Feed.java" afterPath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight2/Feed.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight2/Home.java" afterPath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight2/Home.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight2/New_Complaint_Preview.java" afterPath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight2/New_Complaint_Preview.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight2/SameComplaintPreview.java" afterPath="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight2/SameComplaintPreview.java" />
     </list>
     <ignored path="SpotlightAndroidApp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -195,7 +100,38 @@
     <favorites_list name="SpotlightAndroidApp" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="Home.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight2/Home.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="32" column="42" selection-start-line="32" selection-start-column="42" selection-end-line="32" selection-end-column="42" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Feed.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight2/Feed.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="116" column="93" selection-start-line="116" selection-start-column="93" selection-end-line="116" selection-end-column="93" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AndroidManifest.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.039267015">
+              <caret line="2" column="35" selection-start-line="2" selection-start-column="35" selection-end-line="2" selection-end-column="35" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -2202,7 +2138,7 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="4411322673000" />
+        <entry key="$PROJECT_DIR$" value="4411314674000" />
       </map>
     </option>
     <option name="projectBuildClasspath">
@@ -2646,11 +2582,11 @@
         <option value="$PROJECT_DIR$/app/src/main/java/rest/GetResponseCallback.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/rest/PostCallback.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/rest/HttpUtils.java" />
+        <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight2/New_Complaint_Preview.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight2/SameComplaintPreview.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight2/Home.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight2/Feed.java" />
-        <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
       </list>
     </option>
@@ -2685,6 +2621,135 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SpotlightAndroidApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SpotlightAndroidApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ryanpoulier.spotlight2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scratches">
+        <subPane />
+      </pane>
+      <pane id="AndroidView">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SpotlightAndroidApp" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Gradle Scripts" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidBuildScriptsGroupNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SpotlightAndroidApp" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SpotlightAndroidApp" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SpotlightAndroidApp" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mipmap" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SpotlightAndroidApp" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SpotlightAndroidApp" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="spotlight2" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SpotlightAndroidApp" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="manifests" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidManifestsGroupNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="Scope">
         <subPane subId="Problems">
           <PATH>
@@ -3022,57 +3087,6 @@
             </PATH_ELEMENT>
           </PATH>
         </subPane>
-      </pane>
-      <pane id="AndroidView">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SpotlightAndroidApp" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Gradle Scripts" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidBuildScriptsGroupNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SpotlightAndroidApp" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="PackagesPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SpotlightAndroidApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SpotlightAndroidApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ryanpoulier.spotlight2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="Scratches">
-        <subPane />
       </pane>
     </panes>
   </component>
@@ -3469,17 +3483,17 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="724" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.49353796" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32730263" sideWeight="0.45961228" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32730263" sideWeight="0.4628433" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24878837" sideWeight="0.51960784" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28618422" sideWeight="0.57027465" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28618422" sideWeight="0.42972535" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28618422" sideWeight="0.5638126" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28618422" sideWeight="0.4361874" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.49676898" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.45880452" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.46849757" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32730263" sideWeight="0.49030694" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -3488,7 +3502,7 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24474959" sideWeight="0.48039216" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32956383" sideWeight="0.48039216" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24959612" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Android Model" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21486267" sideWeight="0.51960784" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21486267" sideWeight="0.51960784" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24878837" sideWeight="0.50980395" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3848684" sideWeight="0.51534736" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -3499,7 +3513,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.32854986" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" x="0" y="31" width="1280" height="708" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.49676898" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -3548,20 +3562,20 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight3/New_Complaint_Preview.java</url>
-          <line>141</line>
+          <url>file://$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight2/New_Complaint_Preview.java</url>
+          <line>157</line>
           <properties />
           <option name="timeStamp" value="34" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight3/SameComplaintPreview.java</url>
-          <line>151</line>
+          <url>file://$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight2/SameComplaintPreview.java</url>
+          <line>159</line>
           <properties />
           <option name="timeStamp" value="40" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight3/SameComplaintPreview.java</url>
-          <line>178</line>
+          <url>file://$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight2/SameComplaintPreview.java</url>
+          <line>186</line>
           <properties />
           <option name="timeStamp" value="41" />
         </line-breakpoint>
@@ -3571,7 +3585,7 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight3/Login.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight2/Login.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.4074075">
           <caret line="150" column="21" selection-start-line="150" selection-start-column="21" selection-end-line="150" selection-end-column="21" />
@@ -3599,7 +3613,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight3/About.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight2/About.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.91054314">
           <caret line="23" column="8" selection-start-line="23" selection-start-column="8" selection-end-line="24" selection-end-column="30" />
@@ -3617,14 +3631,14 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight3/ComplaintDetails.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight2/ComplaintDetails.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.42492917">
           <caret line="27" column="13" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight3/ComplaintReport.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight2/ComplaintReport.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.21246459">
           <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
@@ -3647,21 +3661,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight3/New_complaint.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight2/New_complaint.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.16997167">
           <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight3/ListDataAdapter.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight2/ListDataAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.2322946">
           <caret line="125" column="1" selection-start-line="125" selection-start-column="1" selection-end-line="125" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight3/Complaint.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight2/Complaint.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.21246459">
           <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
@@ -3679,7 +3693,7 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight3/RequestVotes.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight2/RequestVotes.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.10344828">
           <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
@@ -3733,6 +3747,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/settings.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/local.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -3747,28 +3769,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight3/PreferencesFragment.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight2/PreferencesFragment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.16455697">
           <caret line="11" column="45" selection-start-line="11" selection-start-column="45" selection-end-line="11" selection-end-column="45" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight3/Nearby_issues.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight2/Nearby_issues.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6837607">
           <caret line="44" column="43" selection-start-line="44" selection-start-column="43" selection-end-line="44" selection-end-column="43" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight3/MyComplaints.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight2/MyComplaints.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3846154">
           <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight3/MyComplaintsOld.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight2/MyComplaintsOld.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="21" column="24" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
@@ -3808,7 +3830,7 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight3/New_Complaint_Location.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight2/New_Complaint_Location.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.04249292">
           <caret line="98" column="8" selection-start-line="98" selection-start-column="8" selection-end-line="98" selection-end-column="57" />
@@ -3826,7 +3848,7 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight3/NearbyComplaints.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight2/NearbyComplaints.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.29745042">
           <caret line="7" column="31" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
@@ -3844,7 +3866,7 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight3/Latest_Complaints.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight2/Latest_Complaints.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.5555556">
           <caret line="29" column="13" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
@@ -3899,6 +3921,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.35620052">
           <caret line="9" column="11" selection-start-line="9" selection-start-column="11" selection-end-line="9" selection-end-column="11" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -3906,43 +3929,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.22167487">
           <caret line="6" column="7" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight3/DataProvider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.25663716">
-          <caret line="8" column="24" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/Library/Android/sdk/platforms/android-23/android.jar!/java/lang/ThreadGroup.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.611111">
-          <caret line="120" column="5" selection-start-line="120" selection-start-column="5" selection-end-line="120" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight3/New_Complaint_Preview.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.18910256">
-          <caret line="217" column="66" selection-start-line="217" selection-start-column="43" selection-end-line="217" selection-end-column="66" />
-          <folding>
-            <element signature="e#6294#6310#0" expanded="false" />
-            <element signature="e#7908#7924#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight3/SameComplaintPreview.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.68731564">
-          <caret line="198" column="0" selection-start-line="198" selection-start-column="0" selection-end-line="198" selection-end-column="0" />
-          <folding>
-            <element signature="e#5249#6011#0" expanded="false" />
-            <element signature="e#5412#5428#0" expanded="false" />
-            <element signature="e#6010#6011#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -3954,40 +3941,76 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/settings.gradle">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight2/DataProvider.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.25663716">
+          <caret line="8" column="24" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="24" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Library/Android/sdk/platforms/android-23/android.jar!/java/lang/ThreadGroup.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.611111">
+          <caret line="120" column="5" selection-start-line="120" selection-start-column="5" selection-end-line="120" selection-end-column="5" />
+          <folding>
+            <element signature="e#2813#2814#0" expanded="true" />
+            <element signature="e#2864#2865#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight2/New_Complaint_Preview.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.18910256">
+          <caret line="217" column="66" selection-start-line="217" selection-start-column="43" selection-end-line="217" selection-end-column="66" />
+          <folding>
+            <element signature="e#6878#6894#0" expanded="true" />
+            <element signature="e#8492#8508#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight2/SameComplaintPreview.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.68731564">
+          <caret line="198" column="0" selection-start-line="198" selection-start-column="0" selection-end-line="198" selection-end-column="0" />
+          <folding>
+            <element signature="e#5554#6316#0" expanded="true" />
+            <element signature="e#5717#5733#0" expanded="true" />
+            <element signature="e#6315#6316#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.59322035">
-          <caret line="14" column="16" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
+        <state vertical-scroll-proportion="0.8879056">
+          <caret line="35" column="45" selection-start-line="35" selection-start-column="45" selection-end-line="35" selection-end-column="45" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight3/Home.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight2/Home.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.042372882">
-          <caret line="29" column="42" selection-start-line="29" selection-start-column="42" selection-end-line="29" selection-end-column="42" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="32" column="42" selection-start-line="32" selection-start-column="42" selection-end-line="32" selection-end-column="42" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight3/Feed.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ryanpoulier/spotlight2/Feed.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.042372882">
-          <caret line="110" column="21" selection-start-line="110" selection-start-column="21" selection-end-line="110" selection-end-column="21" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="116" column="93" selection-start-line="116" selection-start-column="93" selection-end-line="116" selection-end-column="93" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="7.320225">
-          <caret line="211" column="51" selection-start-line="211" selection-start-column="51" selection-end-line="211" selection-end-column="51" />
+        <state vertical-scroll-proportion="0.039267015">
+          <caret line="2" column="35" selection-start-line="2" selection-start-column="35" selection-end-line="2" selection-end-column="35" />
           <folding />
         </state>
       </provider>
