@@ -61,7 +61,7 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".New_Complaint_Description"
-            android:label="Complaint description"
+            android:label="Complaint details"
             android:parentActivityName=".Home"
             android:screenOrientation="portrait" />
         <activity
