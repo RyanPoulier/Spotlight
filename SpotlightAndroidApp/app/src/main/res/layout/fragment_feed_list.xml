@@ -9,5 +9,5 @@
     android:layout_marginLeft="16dp"
     android:layout_marginRight="16dp"
     app:layoutManager="LinearLayoutManager"
-    tools:context="ryanpoulier.spotlight2.FeedFragment"
+    tools:context="ryanpoulier.spotlight3.FeedFragment"
     tools:listitem="@layout/fragment_feed" />

@@ -7,7 +7,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="ryanpoulier.spotlight2.New_Complaint_Video_Option"
+    tools:context="ryanpoulier.spotlight3.New_Complaint_Video_Option"
     android:screenOrientation="portrait">
 
     <LinearLayout

@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="ryanpoulier.spotlight2.Latest_Complaints">
+    tools:context="ryanpoulier.spotlight3.Latest_Complaints">
 
     <GridLayout
         android:layout_width="match_parent"
