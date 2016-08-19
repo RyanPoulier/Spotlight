@@ -62,6 +62,7 @@ public class Login extends AppCompatActivity implements LoaderCallbacks<Cursor> 
     private EditText mPasswordView;
     private View mProgressView;
     private View mLoginFormView;
+    private TextView txtRegister;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -93,7 +94,21 @@ public class Login extends AppCompatActivity implements LoaderCallbacks<Cursor> 
 
         mLoginFormView = findViewById(R.id.login_form);
         mProgressView = findViewById(R.id.login_progress);
+
+        txtRegister = (TextView) findViewById(R.id.txtRegister);
+        txtRegister.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                viewRegistrationView();
+            }
+        });
     }
+
+    private void viewRegistrationView(){
+        Intent intent = new Intent(this, Register.class);
+        startActivity(intent);
+    }
+
 
     private void populateAutoComplete() {
         if (!mayRequestContacts()) {

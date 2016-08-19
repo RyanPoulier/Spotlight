@@ -8,9 +8,19 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".Login">
+    tools:context=".Login"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
 
     <!-- Login progress -->
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView9"
+        android:src="@drawable/banner"
+        android:layout_gravity="center_horizontal"
+        android:adjustViewBounds="true" />
+
     <ProgressBar
         android:id="@+id/login_progress"
         style="?android:attr/progressBarStyleLarge"
@@ -22,8 +32,9 @@
     <ScrollView
         android:id="@+id/login_form"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="bottom">
+        android:layout_height="203dp"
+        android:layout_gravity="bottom"
+        android:fillViewport="false">
 
         <LinearLayout
             android:id="@+id/email_login_form"
@@ -78,6 +89,16 @@
 
         </LinearLayout>
     </ScrollView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Register"
+        android:id="@+id/txtRegister"
+        android:layout_gravity="center_horizontal"
+        android:textStyle="bold"
+        android:linksClickable="true" />
 
     <LinearLayout
         android:orientation="vertical"
