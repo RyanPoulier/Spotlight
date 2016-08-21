@@ -186,7 +186,9 @@ public class Home extends AppCompatActivity {
     }
 
     public void OpenNewComplaint (View view){
-        Intent intent=new Intent (this,New_complaint.class);
+//        Intent intent=new Intent (this,New_complaint.class);
+//        startActivity(intent);
+        Intent intent = new Intent(this, IssueCategory.class);
         startActivity(intent);
     }
 

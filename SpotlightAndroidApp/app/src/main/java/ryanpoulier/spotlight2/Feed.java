@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 
@@ -43,6 +44,13 @@ public class Feed extends Fragment {
 //        lsd.add(new DataProvider("title C", "17:00", "2"));
 //        lsd.add(new DataProvider("title D", "17:00", "2"));
 //        lsd.add(new DataProvider("title E", "17:00", "2"));
+        listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent = new Intent(view.getContext(), ComplaintDetails.class);
+                startActivity(intent);
+            }
+        });
 
         Button btnNewComplaint = (Button) view.findViewById(R.id.btn_new_complaint);
         btnNewComplaint.setOnClickListener(new View.OnClickListener() {
@@ -58,7 +66,8 @@ public class Feed extends Fragment {
     }
 
     public void OpenNewComplaint (View view){
-        Intent intent=new Intent (view.getContext(), New_complaint.class);
+//        Intent intent=new Intent (view.getContext(), New_complaint.class);
+        Intent intent = new Intent(view.getContext(), IssueCategory.class);
         startActivity(intent);
     }
 

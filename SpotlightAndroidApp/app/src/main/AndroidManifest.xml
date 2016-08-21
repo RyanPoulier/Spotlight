@@ -54,6 +54,10 @@
             android:label="Create Account"
             android:screenOrientation="portrait" />
         <activity
+            android:name=".IssueCategory"
+            android:label="Select Issue Category"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".Nearby_issues"
             android:label="Nearby complaints"
             android:parentActivityName=".Home"
