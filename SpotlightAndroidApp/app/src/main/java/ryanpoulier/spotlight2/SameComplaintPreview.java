@@ -8,6 +8,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -17,9 +18,29 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.VideoView;
 
+import com.google.gson.GsonBuilder;
+
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpResponse;
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.entity.StringEntity;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.protocol.BasicHttpContext;
+import org.apache.http.protocol.HttpContext;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.InputStream;
+import java.io.UnsupportedEncodingException;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by ASUS on 07/03/2016.
@@ -129,9 +150,19 @@ public class SameComplaintPreview extends AppCompatActivity {
 
         builder.setPositiveButton("YES", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
+                Map<String, String> comment = new HashMap<String, String>();
+                comment.put("title", titlepreview.getText().toString());
+                comment.put("description", descriptionpreview.getText().toString());
+                comment.put("address", "");
+                comment.put("longitude", "0");
+                comment.put("latitude", "0");
+                String json = new GsonBuilder().create().toJson(comment, Map.class);
+                new NewIssue().execute("http://ec2-52-66-125-116.ap-south-1.compute.amazonaws.com:8080/spotlight-api/issues", json);
+
                 AfterSubmissionMessage();
             }
         });
+
 
         builder.setNegativeButton("NO", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
@@ -142,6 +173,31 @@ public class SameComplaintPreview extends AppCompatActivity {
         AlertDialog alert = builder.create();
         alert.show();
 
+    }
+
+    private class NewIssue extends AsyncTask<String, String, HttpResponse> {
+
+        protected void onPostExecute(String results) {
+
+        }
+
+        @Override
+        protected HttpResponse doInBackground(String... strings) {
+            try {
+                HttpPost httpPost = new HttpPost(strings[0].toString());
+                httpPost.setEntity(new StringEntity(strings[1].toString()));
+                httpPost.setHeader("Accept", "application/json");
+                httpPost.setHeader("Content-type", "application/json");
+                return new DefaultHttpClient().execute(httpPost);
+            } catch (UnsupportedEncodingException e) {
+                e.printStackTrace();
+            } catch (ClientProtocolException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            return null;
+        }
     }
 
     public void AfterSubmissionMessage (){

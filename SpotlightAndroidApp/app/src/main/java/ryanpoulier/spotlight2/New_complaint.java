@@ -6,8 +6,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
+
+import java.util.ArrayList;
 
 public class New_complaint extends AppCompatActivity {
     ListView lst_Issue_Type;
@@ -19,8 +22,19 @@ public class New_complaint extends AppCompatActivity {
         setContentView(R.layout.activity_new_complaint);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeAsUpIndicator(R.mipmap.home_icon);
+        String[] subcategories = getIntent().getExtras().getStringArray("subcategories");
 
         lst_Issue_Type= (ListView)findViewById(R.id.lv_issue_type);
+
+        final ArrayList<String> list = new ArrayList<String>();
+        for (int i = 0; i < subcategories.length; ++i) {
+            list.add(subcategories[i]);
+        }
+        final ArrayAdapter adapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_expandable_list_item_1
+                , list);
+        lst_Issue_Type.setAdapter(adapter);
+
 
         lst_Issue_Type.setOnItemClickListener(
                 new AdapterView.OnItemClickListener(){

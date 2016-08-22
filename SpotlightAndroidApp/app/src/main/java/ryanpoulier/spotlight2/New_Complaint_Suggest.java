@@ -61,7 +61,9 @@ public class New_Complaint_Suggest extends AppCompatActivity {
 
     public void OpenNewComplaintPhotoOption(final View view) {
 
-        Intent intent = new Intent(this, New_Complaint_Photo_Option.class);
+//        Intent intent = new Intent(this, New_Complaint_Photo_Option.class);
+//        startActivity(intent);
+        Intent intent = new Intent(this, New_Complaint_Description.class);
         startActivity(intent);
     }
 

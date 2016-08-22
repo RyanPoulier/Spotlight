@@ -8,6 +8,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -20,11 +21,33 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.VideoView;
 
+import com.google.gson.GsonBuilder;
+
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpResponse;
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.ResponseHandler;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.entity.StringEntity;
+import org.apache.http.impl.client.BasicResponseHandler;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.protocol.BasicHttpContext;
+import org.apache.http.protocol.HttpContext;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.w3c.dom.Text;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.InputStream;
+import java.io.UnsupportedEncodingException;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 
 public class New_Complaint_Preview extends AppCompatActivity {
     TextView descriptionpreview, gpsCoordinatespreview, issuetypepreview, titlepreview,dateview;
@@ -141,10 +164,18 @@ public class New_Complaint_Preview extends AppCompatActivity {
                 String videouri = vidURI.toString();
                 String status = "Notification sent to GoSL";
 
-                DBhelper= new DBhelper (context);
-                sqLiteDatabase= DBhelper.getWritableDatabase();
-                DBhelper.addData(Id, complaintitle, timestamp, issuetype, description, location, image1uri, videouri, status, sqLiteDatabase);
-                DBhelper.close();
+//                DBhelper= new DBhelper (context);
+//                sqLiteDatabase= DBhelper.getWritableDatabase();
+//                DBhelper.addData(Id, complaintitle, timestamp, issuetype, description, location, image1uri, videouri, status, sqLiteDatabase);
+//                DBhelper.close();
+                Map<String, String> comment = new HashMap<String, String>();
+                comment.put("title", complaintitle);
+                comment.put("description", description);
+                comment.put("address", "");
+                comment.put("longitude", "0");
+                comment.put("latitude", "0");
+                String json = new GsonBuilder().create().toJson(comment, Map.class);
+                makeRequest("http://ec2-52-66-125-116.ap-south-1.compute.amazonaws.com:8080/spotlight-api/issues", json);
                 AfterSubmissionMessage();
             }
         });
@@ -175,6 +206,100 @@ public class New_Complaint_Preview extends AppCompatActivity {
         AlertDialog alert = builder.create();
         alert.show();
     }
+
+    public static void execute() {
+        Map<String, String> comment = new HashMap<String, String>();
+        comment.put("subject", "Using the GSON library");
+        comment.put("message", "Using libraries is convenient.");
+        String json = new GsonBuilder().create().toJson(comment, Map.class);
+        makeRequest("http://192.168.0.1:3000/post/77/comments", json);
+    }
+
+    public static HttpResponse makeRequest(String uri, String json) {
+        try {
+            HttpPost httpPost = new HttpPost(uri);
+            httpPost.setEntity(new StringEntity(json));
+            httpPost.setHeader("Accept", "application/json");
+            httpPost.setHeader("Content-type", "application/json");
+            return new DefaultHttpClient().execute(httpPost);
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        } catch (ClientProtocolException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+//    private class FeedList extends AsyncTask<Void, Void, String> {
+//        protected String getASCIIContentFromEntity(HttpEntity entity) throws IllegalStateException, IOException {
+//            InputStream in = entity.getContent();
+//
+//
+//            StringBuffer out = new StringBuffer();
+//            int n = 1;
+//            while (n > 0) {
+//                byte[] b = new byte[4096];
+//                n = in.read(b);
+//
+//
+//                if (n > 0) out.append(new String(b, 0, n));
+//            }
+//
+//
+//            return out.toString();
+//        }
+//
+//
+//        @Override
+//        protected String doInBackground(Void... params) {
+//            HttpClient httpClient = new DefaultHttpClient();
+//            HttpContext localContext = new BasicHttpContext();
+//            HttpGet httpGet = new HttpGet("http://ec2-52-66-125-116.ap-south-1.compute.amazonaws.com:8080/spotlight-api/issues");
+//            String text = null;
+//            try {
+//                HttpResponse response = httpClient.execute(httpGet, localContext);
+//
+//
+//                HttpEntity entity = response.getEntity();
+//
+//
+//                text = getASCIIContentFromEntity(entity);
+//
+//
+//            } catch (Exception e) {
+//                return e.getLocalizedMessage();
+//            }
+//
+//
+//            return text;
+//        }
+//
+//        protected void onPostExecute(String results) {
+//            if (results!=null) {
+//                try {
+//                    JSONArray issues = new JSONArray(results);
+//                    for(int i = 0, count = issues.length(); i< count; i++)
+//                    {
+//                        try {
+//                            JSONObject jsonObject = issues.getJSONObject(i);
+//                            lsd.add(new DataProvider(jsonObject.getString("title"), "", ""));
+//                        }
+//                        catch (JSONException e) {
+//                            e.printStackTrace();
+//                        }
+//                    }
+//                } catch (JSONException e) {
+//                    e.printStackTrace();
+//                }
+//
+//
+//
+//
+//            }
+//        }
+//    }
 }
 
 

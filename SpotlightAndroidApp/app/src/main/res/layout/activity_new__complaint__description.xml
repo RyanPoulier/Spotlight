@@ -18,33 +18,39 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
+    <Button
+        android:layout_width="294dp"
+        android:layout_height="50dp"
+        android:text="Next"
+        android:id="@+id/btn_Description_Next"
+        android:layout_row="3"
+        android:layout_column="1"
+        android:background="#2980b9"
+        android:textColor="#ffffff"
+        android:textSize="20dp"
+        android:onClick="OpenNewComplaintPreview"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="12dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText7"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/textView9"
+        android:hint="Issue" />
+
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textMultiLine"
         android:ems="10"
         android:id="@+id/txtDescription"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentRight="true"
+        android:layout_marginTop="39dp"
+        android:hint="Description"
+        android:layout_below="@+id/editText7"
         android:layout_alignParentEnd="true"
-        android:layout_above="@+id/btn_Description_Next"
-        android:background="@drawable/write_text"
-        android:hint="Enter a description of the issue"
-        android:layout_alignParentTop="true" />
-
-    <Button
-        android:layout_width="222dp"
-        android:layout_height="50dp"
-        android:text="NEXT"
-        android:id="@+id/btn_Description_Next"
-        android:layout_row="3"
-        android:layout_column="1"
-        android:background="#2980b9"
-        android:textColor="#ffffff"
-        android:textSize="25dp"
-        android:onClick="OpenNewComplaintPreview"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="12dp" />
+        android:layout_toEndOf="@+id/textView9" />
 </RelativeLayout>

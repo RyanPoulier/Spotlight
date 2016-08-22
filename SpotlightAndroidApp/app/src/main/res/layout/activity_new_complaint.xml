@@ -20,12 +20,11 @@
 
         <ListView
             android:layout_width="fill_parent"
-            android:layout_height="295dp"
+            android:layout_height="329dp"
             android:id="@+id/lv_issue_type"
             android:layout_row="2"
             android:layout_column="0"
-            android:entries="@array/issue_types"
-            android:background="#e6ebf0"
+            android:background="#ffffff"
             android:choiceMode="singleChoice"
             android:fastScrollAlwaysVisible="false"
             android:scrollingCache="false"
@@ -58,7 +57,7 @@
             android:layout_row="1"
             android:layout_column="0"
             android:onClick="EmeOpenNewComplaintSuggest"
-            android:background="#dedddd" />
+            android:background="#fffefe" />
 
         <EditText
             android:layout_width="match_parent"
@@ -67,20 +66,20 @@
             android:layout_row="3"
             android:layout_column="0"
             android:layout_marginTop="10dp"
-            android:background="#e6ebf0"
+            android:background="#ffffff"
             android:hint="  Other"
             android:textIsSelectable="false"
             android:textAppearance="?android:attr/textAppearanceMedium" />
 
         <Button
-            android:layout_width="222dp"
-            android:layout_height="50dp"
-            android:text="NEXT"
+            android:layout_width="294dp"
+            android:layout_height="wrap_content"
+            android:text="Next"
             android:id="@+id/btn_issue_next"
-            android:layout_row="4"
+            android:layout_row="5"
             android:layout_column="0"
             android:textColor="#ffffff"
-            android:textSize="25dp"
+            android:textSize="20dp"
             android:onClick="OpenNewComplaintLocation"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"

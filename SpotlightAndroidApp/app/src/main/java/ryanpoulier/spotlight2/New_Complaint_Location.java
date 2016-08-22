@@ -176,6 +176,9 @@ public class New_Complaint_Location extends AppCompatActivity implements OnMapRe
                 //marker.setSnippet("Lat: " + add.getLatitude() + ", Lng: " + add.getLongitude());
                 //marker.setTitle("Searched location");
                 mMap.animateCamera(CameraUpdateFactory.newLatLng(latLng));
+                AutoCompleteTextView location_tf = (AutoCompleteTextView) findViewById(R.id.txtSearch);
+                String address = add.getAddressLine(0);
+                location_tf.setText(address);
                 //marker.showInfoWindow();
             }
         });
@@ -234,7 +237,7 @@ public class New_Complaint_Location extends AppCompatActivity implements OnMapRe
             //code from http://www.codeproject.com/Articles/825942/Flirting-with-Google-Maps-on-Android
             marker = mMap.addMarker(new MarkerOptions().position(latLng).draggable(true).flat(true).snippet(result).title("Searched location"));
             mMap.animateCamera(CameraUpdateFactory.newLatLng(latLng));
-            marker.showInfoWindow();
+            //marker.showInfoWindow();
 
         }
     }

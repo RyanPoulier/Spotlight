@@ -100,8 +100,7 @@
         android:src="@mipmap/comment_icon"
         android:background="?android:selectableItemBackground"
         android:layout_below="@+id/textView43"
-        android:layout_toRightOf="@+id/btn_summaryvote"
-        android:layout_toEndOf="@+id/btn_summaryvote" />
+        android:layout_alignEnd="@+id/textView43" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -120,9 +119,8 @@
         android:id="@+id/btn_summaryshare"
         android:src="@mipmap/share_icon"
         android:background="?android:selectableItemBackground"
-        android:layout_below="@+id/textView43"
-        android:layout_toRightOf="@+id/btn_summarycomment"
-        android:layout_toEndOf="@+id/btn_summarycomment" />
+        android:layout_above="@+id/txtID"
+        android:layout_toEndOf="@+id/txtID" />
 
     <TextView
         android:layout_width="wrap_content"
