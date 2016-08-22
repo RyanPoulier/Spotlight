@@ -10,7 +10,6 @@ import java.net.UnknownHostException;
  */
 public interface ComplaintDao {
 
-    Complaint saveComplaint(JsonObject complaint) throws UnknownHostException;
-    JsonObject getComplaint(String id) throws UnknownHostException;
-    JsonObject getComplaint(Complaint complaint) throws UnknownHostException;
+    Complaint saveComplaint(Complaint complaint) throws UnknownHostException;
+    Complaint getComplaint(String id) throws UnknownHostException;
 }

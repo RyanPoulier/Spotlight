@@ -23,7 +23,7 @@ import java.util.List;
  */
 
 @Path("/")
-@Api(value = "/", description = "Test service!")
+@Api(value = "/", description = "Endpoints to manage Complaints")
 public class ComplaintController {
 
     private static final Logger LOGGER = Logger.getLogger(ComplaintController.class);

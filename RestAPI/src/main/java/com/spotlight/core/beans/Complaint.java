@@ -10,7 +10,7 @@ public class Complaint {
 
     private ID _id;
     private Timestamp createdDate;
-    private List<String> issueIds;
+    private String issueId;
 
 
     public ID get_id() {
@@ -29,11 +29,11 @@ public class Complaint {
         this.createdDate = createdDate;
     }
 
-    public List<String> getIssueIds() {
-        return issueIds;
+    public String getIssueId() {
+        return issueId;
     }
 
-    public void setIssueIds(List<String> issueIds) {
-        this.issueIds = issueIds;
+    public void setIssueId(String issueId) {
+        this.issueId = issueId;
     }
 }

@@ -21,7 +21,7 @@ public class ComplaintDaoImpl implements ComplaintDao {
 
 
     @Override
-    public Complaint saveComplaint(JsonObject complaint) throws UnknownHostException {
+    public Complaint saveComplaint(Complaint complaint) throws UnknownHostException {
 
         Mongo mongo = new Mongo("localhost", 27017);
         DB db = mongo.getDB("test-db");
@@ -30,16 +30,14 @@ public class ComplaintDaoImpl implements ComplaintDao {
 
         DBCollection collection = db.getCollection("complaint");
 
-        Map<String, Object> complaintDoc = new HashMap<>();
-        complaintDoc.put("createdDate", complaint.get("createdDate").getAsLong());
-        complaintDoc.put("issueIds", complaint.get("issueIds").getAsJsonArray());
+        BasicDBObject complaintDoc = new BasicDBObject();
+        complaintDoc.put("createdDate", complaint.getCreatedDate());
+        complaintDoc.put("issueId", complaint.get_id());
 
         collection.insert(new BasicDBObject(complaintDoc));
-        mongo.close();
+        ObjectId complaintId = complaintDoc.getObjectId("_id");
 
-        DBObject savedComplaint = collection.findOne(new BasicDBObject(complaintDoc));
-
-        Complaint savedComplaintObj = gson.fromJson(parser.parse(savedComplaint.toString()).getAsJsonObject(), Complaint.class);
+        Complaint savedComplaintObj = getComplaint(complaintId.toString());
 
         LOGGER.info("Issue " + savedComplaintObj.get_id().get$oid() + " saved.");
 
@@ -47,50 +45,19 @@ public class ComplaintDaoImpl implements ComplaintDao {
     }
 
     @Override
-    public JsonObject getComplaint(String id) throws UnknownHostException {
+    public Complaint getComplaint(String id) throws UnknownHostException {
 
         Mongo mongo = new Mongo("localhost", 27017);
         DB db = mongo.getDB("test-db");
         DBCollection collection = db.getCollection("complaint");
         Gson gson = new Gson();
         JsonParser parser = new JsonParser();
-        JsonObject complaint = new JsonObject();
-        IssueDao issueDao = new IssueDaoImpl();
 
         BasicDBObject query = new BasicDBObject();
         query.put("_id", new ObjectId(id));
         DBObject dbObj = collection.findOne(query);
-        complaint = parser.parse(dbObj.toString()).getAsJsonObject();
-        complaint.add("issues", new JsonArray());
+        Complaint complaint = gson.fromJson(parser.parse(dbObj.toString()).getAsJsonObject(), Complaint.class);
 
-        //Adding issues
-        for (JsonElement i : complaint.get("issueIds").getAsJsonArray()){
-            String issueId = i.getAsString();
-            complaint.get("issues").getAsJsonArray().add(gson.toJson(issueDao.getIssue(issueId)));
-        }
         return complaint;
-    }
-
-    @Override
-    public JsonObject getComplaint(Complaint complaint) throws UnknownHostException {
-
-        Mongo mongo = new Mongo("localhost", 27017);
-        DB db = mongo.getDB("test-db");
-        DBCollection collection = db.getCollection("complaint");
-        Gson gson = new Gson();
-        JsonParser parser = new JsonParser();
-        JsonObject complaintObj = new JsonObject();
-        IssueDao issueDao = new IssueDaoImpl();
-
-        DBObject dbObj = collection.findOne(complaint);
-        complaintObj = parser.parse(dbObj.toString()).getAsJsonObject();
-        complaintObj.add("issues", new JsonArray());
-
-        //Adding issues
-        for (JsonElement i : complaintObj.get("issueIds").getAsJsonArray()){
-            String issueId = i.getAsString();
-            complaintObj.get("issues").getAsJsonArray().add(gson.toJson(issueDao.getIssue(issueId)));
-        }
-        return complaintObj;
     }
 }

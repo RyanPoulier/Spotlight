@@ -5,7 +5,7 @@ package com.spotlight.core.beans;
  */
 public class User {
 
-    private int id;
+    private ID _id;
     private String firstName;
     private String lastName;
     private String email;
@@ -14,15 +14,9 @@ public class User {
     private int reputationLevel;
     private boolean complaintAnonymity;
     private boolean commentAnonymity;
-
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
+    private boolean voteRequest;
+    private String password;
+    private int voteCount;
 
     public String getFirstName() {
         return firstName;
@@ -86,5 +80,37 @@ public class User {
 
     public void setCommentAnonymity(boolean commentAnonymity) {
         this.commentAnonymity = commentAnonymity;
+    }
+
+    public boolean isVoteRequest() {
+        return voteRequest;
+    }
+
+    public void setVoteRequest(boolean voteRequest) {
+        this.voteRequest = voteRequest;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public int getVoteCount() {
+        return voteCount;
+    }
+
+    public void setVoteCount(int voteCount) {
+        this.voteCount = voteCount;
+    }
+
+    public ID get_id() {
+        return _id;
+    }
+
+    public void set_id(ID _id) {
+        this._id = _id;
     }
 }

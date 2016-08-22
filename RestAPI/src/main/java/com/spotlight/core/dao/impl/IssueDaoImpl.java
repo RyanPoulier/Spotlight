@@ -27,10 +27,12 @@ public class IssueDaoImpl implements IssueDao {
 
         Mongo mongo = new Mongo("localhost", 27017);
         DB db = mongo.getDB("test-db");
+        issue.setCreatedTime(System.currentTimeMillis() / 1000L);
 
         DBCollection collection = db.getCollection("issue");
 
-        Map<String, Object> issueDoc = new HashMap<>();
+        BasicDBObject issueDoc =  new BasicDBObject();
+
         issueDoc.put("title", issue.getTitle());
         issueDoc.put("description", issue.getDescription());
         issueDoc.put("address", issue.getAddress());
@@ -42,13 +44,17 @@ public class IssueDaoImpl implements IssueDao {
         issueDoc.put("actualResolutionDate", issue.getActualResolutionDate());
         issueDoc.put("closureDate", issue.getClosureDate());
         issueDoc.put("closureRating", issue.getClosureRating());
+        issueDoc.put("createdTime", issue.getCreatedTime());
+        issueDoc.put("status", "RECENTLY_SUBMITTED");
 
-        collection.insert(new BasicDBObject(issueDoc));
+        collection.insert(issueDoc);
+        ObjectId id = issueDoc.getObjectId("_id");
+        Issue savedIssue = getIssue(id.toString());
+        LOGGER.info(issue.toString());
+        LOGGER.info("Issue " + savedIssue.get_id().get$oid() + " saved.");
+
         mongo.close();
-
-        LOGGER.info("Issue " + issue.get_id() + " saved.");
-
-        return null;
+        return savedIssue;
     }
 
     @Override
@@ -84,6 +90,8 @@ public class IssueDaoImpl implements IssueDao {
         BasicDBObject query = new BasicDBObject();
         query.put("_id", new ObjectId(id));
         DBObject dbObj = collection.findOne(query);
+
+        LOGGER.info("Issue " + id + " retrieved");
         return gson.fromJson(parser.parse(dbObj.toString()).getAsJsonObject(), Issue.class);
     }
 
@@ -96,7 +104,23 @@ public class IssueDaoImpl implements IssueDao {
         Gson gson = new Gson();
         JsonParser parser = new JsonParser();
 
-        DBObject dbObj = collection.findOne(issue);
+        Map<String, Object> issueDoc = new HashMap<>();
+        issueDoc.put("title", issue.getTitle());
+        issueDoc.put("description", issue.getDescription());
+        issueDoc.put("address", issue.getAddress());
+        issueDoc.put("longitude", issue.getLongitude());
+        issueDoc.put("latitude", issue.getLatitude());
+        issueDoc.put("votes", issue.getVotes());
+        issueDoc.put("modifiedTime", issue.getModifiedTime());
+        issueDoc.put("estimatedDates", issue.getEstimatedDates());
+        issueDoc.put("actualResolutionDate", issue.getActualResolutionDate());
+        issueDoc.put("closureDate", issue.getClosureDate());
+        issueDoc.put("closureRating", issue.getClosureRating());
+        issueDoc.put("createdTime", issue.getCreatedTime());
+        issueDoc.put("status", issue.getStatus());
+
+        DBObject dbObj = collection.findOne(new BasicDBObject(issueDoc));
+        LOGGER.info(dbObj);
         return gson.fromJson(parser.parse(dbObj.toString()).getAsJsonObject(), Issue.class);
     }
 }

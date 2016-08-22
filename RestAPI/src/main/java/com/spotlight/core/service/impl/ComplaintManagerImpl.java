@@ -33,21 +33,22 @@ public class ComplaintManagerImpl implements ComplaintManager {
     @Override
     public JsonObject saveNewComplaint(JsonObject fullComplaint) throws UnknownHostException {
 
-        List<String> issueIds = new ArrayList<>();
-        List<Issue> issues = new ArrayList<>();
-        Gson gson = new Gson();
-
-        LOGGER.info("saving new complaint ...");
-
-        for (JsonElement issueObj : fullComplaint.get("issues").getAsJsonArray()) {
-            Issue issue = gson.fromJson(issueObj.getAsJsonObject(), Issue.class);
-            issueDao.saveIssue(issue);
-            issues.add(issue);
-            issueIds.add(issueDao.getIssue(issue).get_id().get$oid());
-        }
-
-        fullComplaint.addProperty("issueIds", gson.toJson(issueIds));
-        return complaintDao.getComplaint(complaintDao.saveComplaint(fullComplaint));
+//        List<String> issueIds = new ArrayList<>();
+//        List<Issue> issues = new ArrayList<>();
+//        Gson gson = new Gson();
+//
+//        LOGGER.info("saving new complaint ...");
+//
+//        for (JsonElement issueObj : fullComplaint.get("issues").getAsJsonArray()) {
+//            Issue issue = gson.fromJson(issueObj.getAsJsonObject(), Issue.class);
+//            issueDao.saveIssue(issue);
+//            issues.add(issue);
+//            issueIds.add(issueDao.getIssue(issue).get_id().get$oid());
+//        }
+//
+//        fullComplaint.addProperty("issueIds", gson.toJson(issueIds));
+//        return complaintDao.getComplaint(complaintDao.saveComplaint(fullComplaint));
+        return null;
     }
 
     @Override

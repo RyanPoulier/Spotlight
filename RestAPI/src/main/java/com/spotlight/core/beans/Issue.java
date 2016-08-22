@@ -19,6 +19,8 @@ public class Issue {
     private long actualResolutionDate;
     private long closureDate;
     private int closureRating;
+    private long createdTime;
+    private String status;
 
 
     public ID get_id() {
@@ -120,5 +122,21 @@ public class Issue {
     @Override
     public String toString() {
         return new Gson().toJson(this);
+    }
+
+    public long getCreatedTime() {
+        return createdTime;
+    }
+
+    public void setCreatedTime(long createdTime) {
+        this.createdTime = createdTime;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }
