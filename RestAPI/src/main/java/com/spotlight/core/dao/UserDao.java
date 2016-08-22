@@ -12,4 +12,5 @@ public interface UserDao {
     User getUser(User user) throws UnknownHostException;
     User saveUser(User user) throws UnknownHostException;
     boolean checkEmail(String email) throws UnknownHostException;
+    boolean validateUser(String id) throws UnknownHostException;
 }

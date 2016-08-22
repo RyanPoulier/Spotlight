@@ -1,20 +1,15 @@
 package com.spotlight.core.service.impl;
 
-import com.google.gson.Gson;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
 import com.spotlight.core.beans.Complaint;
-import com.spotlight.core.beans.Issue;
 import com.spotlight.core.dao.ComplaintDao;
-import com.spotlight.core.dao.IssueDao;
 import com.spotlight.core.dao.impl.ComplaintDaoImpl;
-import com.spotlight.core.dao.impl.IssueDaoImpl;
+import com.spotlight.core.exceptions.InvalidParameterException;
 import com.spotlight.core.service.ComplaintManager;
+import com.spotlight.core.util.SpotlightUtils;
+import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
-import scala.util.parsing.combinator.testing.Str;
 
 import java.net.UnknownHostException;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -23,38 +18,40 @@ import java.util.List;
 public class ComplaintManagerImpl implements ComplaintManager {
 
     private static final Logger LOGGER = Logger.getLogger(ComplaintManagerImpl.class);
-    private IssueDao issueDao;
-    private ComplaintDao complaintDao = new ComplaintDaoImpl();
+    private ComplaintDao complaintDao;
 
     public ComplaintManagerImpl(){
-        issueDao = new IssueDaoImpl();
+        complaintDao = new ComplaintDaoImpl();
     }
 
     @Override
-    public JsonObject saveNewComplaint(JsonObject fullComplaint) throws UnknownHostException {
+    public Complaint saveNewComplaint(Complaint complaint) throws UnknownHostException, InvalidParameterException {
 
-//        List<String> issueIds = new ArrayList<>();
-//        List<Issue> issues = new ArrayList<>();
-//        Gson gson = new Gson();
-//
-//        LOGGER.info("saving new complaint ...");
-//
-//        for (JsonElement issueObj : fullComplaint.get("issues").getAsJsonArray()) {
-//            Issue issue = gson.fromJson(issueObj.getAsJsonObject(), Issue.class);
-//            issueDao.saveIssue(issue);
-//            issues.add(issue);
-//            issueIds.add(issueDao.getIssue(issue).get_id().get$oid());
-//        }
-//
-//        fullComplaint.addProperty("issueIds", gson.toJson(issueIds));
-//        return complaintDao.getComplaint(complaintDao.saveComplaint(fullComplaint));
-        return null;
+        if (complaint == null) {
+            String message = "Invalid parameters provided";
+            LOGGER.error(message);
+            throw new InvalidParameterException(message);
+        }
+
+        if (StringUtils.isBlank(complaint.getIssueId()) || StringUtils.isBlank(complaint.getUserId())) {
+            String message = "Invalid parameters provided";
+            LOGGER.error(message);
+            throw new InvalidParameterException(message);
+        }
+
+        if (SpotlightUtils.validateUserId(complaint.getUserId()) == false && SpotlightUtils.validateIssueId(complaint.getIssueId()) == false) {
+            String message = "User ID or Issue ID doesn't exist!";
+            LOGGER.error(message);
+            throw new InvalidParameterException(message);
+        }
+
+        return complaintDao.saveComplaint(complaint);
     }
 
     @Override
-    public List<Issue> getAllComplaints() throws UnknownHostException {
+    public List<Complaint> getAllComplaints(String issueId) throws UnknownHostException {
 
         LOGGER.info("Retrieving the issues...");
-        return issueDao.getIssues();
+        return null;
     }
 }

@@ -25,22 +25,22 @@ public class ComplaintDaoImpl implements ComplaintDao {
 
         Mongo mongo = new Mongo("localhost", 27017);
         DB db = mongo.getDB("test-db");
-        Gson gson = new Gson();
-        JsonParser parser = new JsonParser();
 
         DBCollection collection = db.getCollection("complaint");
 
         BasicDBObject complaintDoc = new BasicDBObject();
-        complaintDoc.put("createdDate", complaint.getCreatedDate());
-        complaintDoc.put("issueId", complaint.get_id());
+        complaintDoc.put("createdDate", System.currentTimeMillis() / 1000L);
+        complaintDoc.put("issueId", complaint.getIssueId());
+        complaintDoc.put("userId", complaint.getUserId());
 
-        collection.insert(new BasicDBObject(complaintDoc));
+        collection.insert(complaintDoc);
         ObjectId complaintId = complaintDoc.getObjectId("_id");
 
         Complaint savedComplaintObj = getComplaint(complaintId.toString());
 
-        LOGGER.info("Issue " + savedComplaintObj.get_id().get$oid() + " saved.");
+        LOGGER.info("Complaint " + savedComplaintObj.get_id().get$oid() + " saved.");
 
+        mongo.close();
         return savedComplaintObj;
     }
 
@@ -58,6 +58,7 @@ public class ComplaintDaoImpl implements ComplaintDao {
         DBObject dbObj = collection.findOne(query);
         Complaint complaint = gson.fromJson(parser.parse(dbObj.toString()).getAsJsonObject(), Complaint.class);
 
+        mongo.close();
         return complaint;
     }
 }

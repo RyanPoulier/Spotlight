@@ -1,16 +1,14 @@
 package com.spotlight.core.beans;
 
-import java.sql.Timestamp;
-import java.util.List;
-
 /**
  * Created by Padmaka on 8/1/16.
  */
 public class Complaint {
 
     private ID _id;
-    private Timestamp createdDate;
+    private long createdDate;
     private String issueId;
+    private String userId;
 
 
     public ID get_id() {
@@ -21,11 +19,11 @@ public class Complaint {
         this._id = _id;
     }
 
-    public Timestamp getCreatedDate() {
+    public long getCreatedDate() {
         return createdDate;
     }
 
-    public void setCreatedDate(Timestamp createdDate) {
+    public void setCreatedDate(long createdDate) {
         this.createdDate = createdDate;
     }
 
@@ -35,5 +33,13 @@ public class Complaint {
 
     public void setIssueId(String issueId) {
         this.issueId = issueId;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 }

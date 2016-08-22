@@ -21,6 +21,7 @@ public class Issue {
     private int closureRating;
     private long createdTime;
     private String status;
+    private String userId;
 
 
     public ID get_id() {
@@ -138,5 +139,13 @@ public class Issue {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 }

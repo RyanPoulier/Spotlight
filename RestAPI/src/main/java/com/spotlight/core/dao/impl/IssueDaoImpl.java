@@ -46,6 +46,7 @@ public class IssueDaoImpl implements IssueDao {
         issueDoc.put("closureRating", issue.getClosureRating());
         issueDoc.put("createdTime", issue.getCreatedTime());
         issueDoc.put("status", "RECENTLY_SUBMITTED");
+        issueDoc.put("userId", issue.getUserId());
 
         collection.insert(issueDoc);
         ObjectId id = issueDoc.getObjectId("_id");
@@ -75,6 +76,7 @@ public class IssueDaoImpl implements IssueDao {
             issues.add(issue);
         }
 
+        mongo.close();
         return issues;
     }
 
@@ -92,6 +94,8 @@ public class IssueDaoImpl implements IssueDao {
         DBObject dbObj = collection.findOne(query);
 
         LOGGER.info("Issue " + id + " retrieved");
+
+        mongo.close();
         return gson.fromJson(parser.parse(dbObj.toString()).getAsJsonObject(), Issue.class);
     }
 
@@ -121,6 +125,8 @@ public class IssueDaoImpl implements IssueDao {
 
         DBObject dbObj = collection.findOne(new BasicDBObject(issueDoc));
         LOGGER.info(dbObj);
+
+        mongo.close();
         return gson.fromJson(parser.parse(dbObj.toString()).getAsJsonObject(), Issue.class);
     }
 }

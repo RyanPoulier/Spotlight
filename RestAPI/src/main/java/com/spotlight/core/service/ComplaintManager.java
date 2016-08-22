@@ -1,8 +1,7 @@
 package com.spotlight.core.service;
 
-import com.google.gson.JsonObject;
 import com.spotlight.core.beans.Complaint;
-import com.spotlight.core.beans.Issue;
+import com.spotlight.core.exceptions.InvalidParameterException;
 
 import java.net.UnknownHostException;
 import java.util.List;
@@ -12,6 +11,6 @@ import java.util.List;
  */
 public interface ComplaintManager {
 
-    JsonObject saveNewComplaint(JsonObject fullComplaint) throws UnknownHostException;
-    List<Issue> getAllComplaints() throws UnknownHostException;
+    Complaint saveNewComplaint(Complaint fullComplaint) throws UnknownHostException, InvalidParameterException;
+    List<Complaint> getAllComplaints(String issueId) throws UnknownHostException;
 }
