@@ -94,6 +94,7 @@ public class IssueDaoImpl implements IssueDao {
         DBObject dbObj = collection.findOne(query);
 
         LOGGER.info("Issue " + id + " retrieved");
+        LOGGER.info("dbObj " + dbObj);
 
         mongo.close();
         return gson.fromJson(parser.parse(dbObj.toString()).getAsJsonObject(), Issue.class);

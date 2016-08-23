@@ -51,7 +51,7 @@ public class ComplaintManagerImpl implements ComplaintManager {
     @Override
     public List<Complaint> getAllComplaints(String issueId) throws UnknownHostException {
 
-        LOGGER.info("Retrieving the issues...");
-        return null;
+        LOGGER.info("Retrieving the complaints for issue ID - " + issueId);
+        return complaintDao.getComplaints(issueId);
     }
 }

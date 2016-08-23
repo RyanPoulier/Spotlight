@@ -45,6 +45,6 @@ public class ComplaintController {
     public Response getComplaints(@PathParam("issueId") String issueId) throws UnknownHostException {
 
         LOGGER.info("Received request to retrieve all complaints for the issue - " + issueId);
-        return Response.status(Response.Status.ACCEPTED).entity("").build();
+        return Response.status(Response.Status.ACCEPTED).entity(complaintManager.getAllComplaints(issueId)).build();
     }
 }

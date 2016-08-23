@@ -47,8 +47,6 @@ public class UserDaoImpl implements UserDao {
         Mongo mongo = new Mongo("localhost", 27017);
         DB db = mongo.getDB("test-db");
         DBCollection collection = db.getCollection("user");
-        Gson gson = new Gson();
-        JsonParser parser = new JsonParser();
 
         BasicDBObject issueDoc = new BasicDBObject();
         issueDoc.put("firstName", user.getFirstName());
@@ -99,6 +97,7 @@ public class UserDaoImpl implements UserDao {
         query.put("_id", new ObjectId(id));
 
         DBObject dbObj = collection.findOne(query);
+        LOGGER.info("is null " + (dbObj == null));
 
         mongo.close();
 
