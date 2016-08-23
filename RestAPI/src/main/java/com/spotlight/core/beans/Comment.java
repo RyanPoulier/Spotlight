@@ -10,6 +10,7 @@ public class Comment {
     private String issueId;
     private String userId;
     private long createdDate;
+    private String userName;
 
 
     public ID get_id() {
@@ -50,5 +51,13 @@ public class Comment {
 
     public void setCreatedDate(long createdDate) {
         this.createdDate = createdDate;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 }

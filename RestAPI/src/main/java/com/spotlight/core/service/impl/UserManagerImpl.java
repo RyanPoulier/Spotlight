@@ -6,7 +6,9 @@ import com.spotlight.core.dao.impl.UserDaoImpl;
 import com.spotlight.core.exceptions.InvalidParameterException;
 import com.spotlight.core.exceptions.InvalidUsernameOrPasswordException;
 import com.spotlight.core.service.UserManager;
+import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
+import org.apache.log4j.lf5.util.StreamUtils;
 
 import java.net.UnknownHostException;
 
@@ -35,6 +37,11 @@ public class UserManagerImpl implements UserManager {
             String message = "Username not available";
             LOGGER.error(message);
             throw new InvalidParameterException(message);
+        }
+
+        if (StringUtils.isBlank(user.getFirstName()) && StringUtils.isBlank(user.getLastName())) {
+            user.setFirstName("Anonymous");
+            user.setLastName("");
         }
 
         return userDao.saveUser(user);

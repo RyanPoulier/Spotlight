@@ -6,6 +6,7 @@ import com.spotlight.core.beans.Complaint;
 import com.spotlight.core.beans.Issue;
 import com.spotlight.core.dao.ComplaintDao;
 import com.spotlight.core.dao.IssueDao;
+import com.spotlight.core.util.SpotlightUtils;
 import org.apache.log4j.Logger;
 import org.bson.types.ObjectId;
 
@@ -35,6 +36,7 @@ public class ComplaintDaoImpl implements ComplaintDao {
         complaintDoc.put("createdDate", System.currentTimeMillis() / 1000L);
         complaintDoc.put("issueId", complaint.getIssueId());
         complaintDoc.put("userId", complaint.getUserId());
+        complaintDoc.put("userName", SpotlightUtils.getUserNameById(complaint.getUserId()));
 
         collection.insert(complaintDoc);
         ObjectId complaintId = complaintDoc.getObjectId("_id");

@@ -12,6 +12,7 @@ import com.spotlight.core.beans.Issue;
 import com.spotlight.core.beans.User;
 import com.spotlight.core.beans.Vote;
 import com.spotlight.core.dao.VoteDao;
+import com.spotlight.core.util.SpotlightUtils;
 import org.apache.log4j.Logger;
 import org.bson.types.ObjectId;
 
@@ -38,6 +39,7 @@ public class VoteDaoImpl implements VoteDao {
         voteDoc.put("issueId", vote.getIssueId());
         voteDoc.put("userId", vote.getUserId());
         voteDoc.put("createdTime", System.currentTimeMillis() / 1000L);
+        voteDoc.put("userName", SpotlightUtils.getUserNameById(vote.getUserId()));
 
         collection.insert(voteDoc);
         ObjectId id = voteDoc.getObjectId("_id");

@@ -7,6 +7,7 @@ import com.mongodb.DB;
 import com.mongodb.DBCollection;
 import com.mongodb.DBObject;
 import com.mongodb.Mongo;
+import com.spotlight.core.beans.Issue;
 import com.spotlight.core.beans.User;
 import com.spotlight.core.dao.UserDao;
 import org.apache.log4j.Logger;
@@ -38,6 +39,23 @@ public class UserDaoImpl implements UserDao {
         LOGGER.info("User - " + dbObj);
 
         mongo.close();
+        return gson.fromJson(parser.parse(dbObj.toString()).getAsJsonObject(), User.class);
+    }
+
+    @Override
+    public User getUser(String id) throws UnknownHostException {
+
+        Mongo mongo = new Mongo("localhost", 27017);
+        DB db = mongo.getDB("test-db");
+        DBCollection collection = db.getCollection("user");
+        Gson gson = new Gson();
+        JsonParser parser = new JsonParser();
+
+        BasicDBObject query = new BasicDBObject();
+        query.put("_id", new ObjectId(id));
+
+        DBObject dbObj = collection.findOne(query);
+
         return gson.fromJson(parser.parse(dbObj.toString()).getAsJsonObject(), User.class);
     }
 

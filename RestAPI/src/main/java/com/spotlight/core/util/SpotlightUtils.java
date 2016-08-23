@@ -1,6 +1,7 @@
 package com.spotlight.core.util;
 
 import com.spotlight.core.beans.Issue;
+import com.spotlight.core.beans.User;
 import com.spotlight.core.dao.IssueDao;
 import com.spotlight.core.dao.UserDao;
 import com.spotlight.core.dao.impl.IssueDaoImpl;
@@ -35,5 +36,12 @@ public class SpotlightUtils {
         } else {
             return true;
         }
+    }
+
+    public static String getUserNameById(String id) throws UnknownHostException {
+
+        User user = userDao.getUser(id);
+
+        return user.getFirstName() + " " + user.getLastName();
     }
 }

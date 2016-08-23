@@ -11,6 +11,7 @@ public class Vote {
     private String issueId;
     private String userId;
     private long createdTime;
+    private String userName;
 
 
     public ID get_id() {
@@ -48,5 +49,13 @@ public class Vote {
 
     public void setCreatedTime(long createdTime) {
         this.createdTime = createdTime;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 }

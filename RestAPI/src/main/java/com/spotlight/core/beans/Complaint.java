@@ -9,6 +9,7 @@ public class Complaint {
     private long createdDate;
     private String issueId;
     private String userId;
+    private String userName;
 
 
     public ID get_id() {
@@ -41,5 +42,13 @@ public class Complaint {
 
     public void setUserId(String userId) {
         this.userId = userId;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 }

@@ -11,6 +11,7 @@ import com.mongodb.Mongo;
 import com.spotlight.core.beans.Comment;
 import com.spotlight.core.beans.Complaint;
 import com.spotlight.core.dao.CommentDao;
+import com.spotlight.core.util.SpotlightUtils;
 import org.apache.log4j.Logger;
 import org.bson.types.ObjectId;
 
@@ -39,6 +40,7 @@ public class CommentDaoImpl implements CommentDao {
         commentDoc.put("issueId", comment.getIssueId());
         commentDoc.put("userId", comment.getUserId());
         commentDoc.put("description", comment.getDescription());
+        commentDoc.put("userName", SpotlightUtils.getUserNameById(comment.getUserId()));
 
         collection.insert(commentDoc);
         ObjectId commentId = commentDoc.getObjectId("_id");
