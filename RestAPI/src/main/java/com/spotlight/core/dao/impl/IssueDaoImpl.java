@@ -47,6 +47,8 @@ public class IssueDaoImpl implements IssueDao {
         issueDoc.put("createdTime", issue.getCreatedTime());
         issueDoc.put("status", "RECENTLY_SUBMITTED");
         issueDoc.put("userId", issue.getUserId());
+        issueDoc.put("userName", issue.getUserName());
+        issueDoc.put("issueType", issue.getIssueType());
 
         collection.insert(issueDoc);
         ObjectId id = issueDoc.getObjectId("_id");
@@ -70,6 +72,30 @@ public class IssueDaoImpl implements IssueDao {
         DBCollection collection = db.getCollection("issue");
 
         DBCursor cursor = collection.find();
+        while(cursor.hasNext()) {
+            String issueString = cursor.next().toString();
+            Issue issue = gson.fromJson(parser.parse(issueString).getAsJsonObject(), Issue.class);
+            issues.add(issue);
+        }
+
+        mongo.close();
+        return issues;
+    }
+
+    @Override
+    public List<Issue> getIssuesByType(String type) throws UnknownHostException {
+
+        Mongo mongo = new Mongo("localhost", 27017);
+        DB db = mongo.getDB("test-db");
+        List<Issue> issues = new ArrayList<>();
+        Gson gson = new Gson();
+        JsonParser parser = new JsonParser();
+
+        DBCollection collection = db.getCollection("issue");
+        BasicDBObject issueDoc = new BasicDBObject();
+        issueDoc.put("issueType", type);
+
+        DBCursor cursor = collection.find(issueDoc);
         while(cursor.hasNext()) {
             String issueString = cursor.next().toString();
             Issue issue = gson.fromJson(parser.parse(issueString).getAsJsonObject(), Issue.class);

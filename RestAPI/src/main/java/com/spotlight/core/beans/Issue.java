@@ -1,6 +1,7 @@
 package com.spotlight.core.beans;
 
 import com.google.gson.Gson;
+import scala.util.parsing.combinator.testing.Str;
 
 /**
  * Created by Padmaka on 8/1/16.
@@ -22,6 +23,8 @@ public class Issue {
     private long createdTime;
     private String status;
     private String userId;
+    private String userName;
+    private String issueType;
 
 
     public ID get_id() {
@@ -147,5 +150,21 @@ public class Issue {
 
     public void setUserId(String userId) {
         this.userId = userId;
+    }
+
+    public String getIssueType() {
+        return issueType;
+    }
+
+    public void setIssueType(String issueType) {
+        this.issueType = issueType;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 }

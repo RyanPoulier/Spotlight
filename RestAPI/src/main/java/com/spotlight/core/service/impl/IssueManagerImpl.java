@@ -44,6 +44,9 @@ public class IssueManagerImpl implements IssueManager {
             throw new InvalidParameterException(message);
         }
 
+        String userName = SpotlightUtils.getUserNameById(issue.getUserId());
+        issue.setUserName(userName);
+
         LOGGER.info("Saving Issue...");
 
         Issue savedIssue = issueDao.saveIssue(issue);
@@ -69,6 +72,12 @@ public class IssueManagerImpl implements IssueManager {
         }
 
         return issueDao.getIssue(id);
+    }
+
+    @Override
+    public List<Issue> getIssuesByType(String type) throws UnknownHostException {
+
+        return issueDao.getIssuesByType(type);
     }
 
     @Override

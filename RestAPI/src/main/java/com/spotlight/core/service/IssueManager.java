@@ -13,6 +13,7 @@ public interface IssueManager {
 
     Issue saveIssue(Issue issue) throws InvalidParameterException, UnknownHostException;
     Issue getIssueById(String id) throws InvalidParameterException, UnknownHostException;
+    List<Issue> getIssuesByType(String type) throws UnknownHostException;
     List<Issue> getNearbyIssues(double latitude, double longitude) throws UnknownHostException;
     List<Issue> getAllIssues() throws UnknownHostException;
 }

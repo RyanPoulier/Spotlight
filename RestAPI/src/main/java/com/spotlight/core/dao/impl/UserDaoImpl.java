@@ -115,7 +115,6 @@ public class UserDaoImpl implements UserDao {
         query.put("_id", new ObjectId(id));
 
         DBObject dbObj = collection.findOne(query);
-        LOGGER.info("is null " + (dbObj == null));
 
         mongo.close();
 

@@ -64,4 +64,13 @@ public class IssueController {
         LOGGER.info("Received request to get issue - " + id);
         return Response.status(Response.Status.ACCEPTED).entity(issueManager.getIssueById(id)).build();
     }
+
+    @GET
+    @Path("/issues/type/{type}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getIssuesByType(@PathParam("type") String type) throws InvalidParameterException, UnknownHostException {
+
+        LOGGER.info("Received request to get issue - " + type);
+        return Response.status(Response.Status.ACCEPTED).entity(issueManager.getIssuesByType(type)).build();
+    }
 }
