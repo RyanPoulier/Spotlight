@@ -72,6 +72,12 @@ public class IssueManagerImpl implements IssueManager {
     }
 
     @Override
+    public List<Issue> getNearbyIssues(double latitude, double longitude) throws UnknownHostException {
+
+        return issueDao.getNearbyIssues(latitude, longitude);
+    }
+
+    @Override
     public List<Issue> getAllIssues() throws UnknownHostException {
 
         return issueDao.getIssues();

@@ -48,6 +48,15 @@ public class IssueController {
     }
 
     @GET
+    @Path("/issues/nearby/{lat}/{lon}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getNearbyIssues(@PathParam("lat") double latitude, @PathParam("lon") double longitude) throws InvalidParameterException, UnknownHostException {
+
+        LOGGER.info("Received request to get nearby issues");
+        return Response.status(Response.Status.ACCEPTED).entity(issueManager.getNearbyIssues(latitude, longitude)).build();
+    }
+
+    @GET
     @Path("/issues/{id}")
     @Produces(MediaType.APPLICATION_JSON)
     public Response getIssue(@PathParam("id") String id) throws InvalidParameterException, UnknownHostException {

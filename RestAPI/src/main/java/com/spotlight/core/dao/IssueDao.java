@@ -12,6 +12,7 @@ public interface IssueDao {
 
     Issue saveIssue(Issue issue) throws UnknownHostException;
     List<Issue> getIssues() throws UnknownHostException;
+    List<Issue> getNearbyIssues(double latitude, double longitude) throws UnknownHostException;
     Issue getIssue(String id) throws UnknownHostException;
     Issue getIssue(Issue issue) throws UnknownHostException;
 }

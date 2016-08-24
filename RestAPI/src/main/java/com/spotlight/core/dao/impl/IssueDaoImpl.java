@@ -3,9 +3,9 @@ package com.spotlight.core.dao.impl;
 import com.google.gson.Gson;
 import com.google.gson.JsonParser;
 import com.mongodb.*;
-import com.spotlight.core.beans.ID;
 import com.spotlight.core.beans.Issue;
 import com.spotlight.core.dao.IssueDao;
+import com.spotlight.core.util.SpotlightUtils;
 import org.apache.log4j.Logger;
 import org.bson.types.ObjectId;
 
@@ -78,6 +78,25 @@ public class IssueDaoImpl implements IssueDao {
 
         mongo.close();
         return issues;
+    }
+
+    @Override
+    public List<Issue> getNearbyIssues(double latitude, double longitude) throws UnknownHostException {
+
+        List<Issue> issues = getIssues();
+        List<Issue> nearbyIssues = new ArrayList<>();
+
+        if (issues == null) {
+            return nearbyIssues;
+        }
+
+        for (Issue issue : issues) {
+            if (SpotlightUtils.isNearbyIssue(issue, latitude, longitude)) {
+                nearbyIssues.add(issue);
+            }
+        }
+
+        return nearbyIssues;
     }
 
     @Override
