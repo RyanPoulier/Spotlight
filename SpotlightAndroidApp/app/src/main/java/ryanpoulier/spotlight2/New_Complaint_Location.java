@@ -9,6 +9,7 @@ import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
@@ -31,15 +32,26 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpResponse;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.protocol.BasicHttpContext;
+import org.apache.http.protocol.HttpContext;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.w3c.dom.Text;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.List;
 
 public class New_Complaint_Location extends AppCompatActivity implements OnMapReadyCallback {
     String ADDRESS, result, addressline, town, gpsCoordinates, dragresult;
     Marker marker = null;
-
+    AutoCompleteTextView location_tf;
     private GoogleMap mMap;
     /**
      * ATTENTION: This was auto-generated to implement the App Indexing API.
@@ -56,7 +68,7 @@ public class New_Complaint_Location extends AppCompatActivity implements OnMapRe
 
         client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
-
+        location_tf = (AutoCompleteTextView) findViewById(R.id.txtSearch);
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
@@ -176,7 +188,7 @@ public class New_Complaint_Location extends AppCompatActivity implements OnMapRe
                 //marker.setSnippet("Lat: " + add.getLatitude() + ", Lng: " + add.getLongitude());
                 //marker.setTitle("Searched location");
                 mMap.animateCamera(CameraUpdateFactory.newLatLng(latLng));
-                AutoCompleteTextView location_tf = (AutoCompleteTextView) findViewById(R.id.txtSearch);
+
                 String address = add.getAddressLine(0);
                 location_tf.setText(address);
                 //marker.showInfoWindow();
@@ -292,11 +304,17 @@ public class New_Complaint_Location extends AppCompatActivity implements OnMapRe
         //editor.putString("address", result);
         //editor.apply();
         //Toast.makeText(this, "Address Saved", Toast.LENGTH_SHORT).show();
+        String storedragcoord = marker.getPosition().latitude + "," + marker.getPosition().longitude;
+        gpsCoordinates = storedragcoord.toString();
 
         SharedPreferences prefs = getSharedPreferences("gpsCoordinates", MODE_WORLD_READABLE);
 
         SharedPreferences.Editor editor = prefs.edit();
+
         editor.putString("gpsCoordinates", String.valueOf(gpsCoordinates));
+        editor.putFloat("latitude", (float) marker.getPosition().latitude);
+        editor.putFloat("longitude", (float) marker.getPosition().longitude);
+        editor.putString("address", location_tf.getText().toString());
         editor.apply();
 
         //Toast.makeText(this, "Location Saved", Toast.LENGTH_LONG).show();

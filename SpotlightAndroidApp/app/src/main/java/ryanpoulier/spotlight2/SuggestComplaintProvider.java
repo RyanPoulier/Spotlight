@@ -9,6 +9,14 @@ public class SuggestComplaintProvider {
     private String title;
     private String timestamp;
     private String ID;
+    private String issueType;
+
+    public String getIssueType() {
+        return issueType;
+    }
+    public void setIssueType(String title) {
+        this.issueType = issueType;
+    }
 
 
     public String getTitle() {
@@ -33,10 +41,11 @@ public class SuggestComplaintProvider {
         this.ID = ID;
     }
 
-    public SuggestComplaintProvider(String title, String timestamp, String ID){
+    public SuggestComplaintProvider(String title, String timestamp, String ID, String issueType){
         this.title= title;
         this.timestamp= timestamp;
         this.ID= ID;
+        this.issueType = issueType;
 
     }
 

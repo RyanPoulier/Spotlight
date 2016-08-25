@@ -15,6 +15,7 @@ import java.util.Date;
 
 public class New_Complaint_Description extends AppCompatActivity {
 
+    EditText editIssue;
     EditText editDescription;
 
 
@@ -26,6 +27,7 @@ public class New_Complaint_Description extends AppCompatActivity {
             getSupportActionBar().setHomeAsUpIndicator(R.mipmap.home_icon);
 
             editDescription = (EditText) findViewById(R.id.txtDescription);
+            editIssue = (EditText) findViewById(R.id.txtIssue);
         }
 
         public void OpenNewComplaintPreview(View v) {
@@ -42,6 +44,7 @@ public class New_Complaint_Description extends AppCompatActivity {
 
             SharedPreferences.Editor editor=prefs.edit();
             editor.putString("description", editDescription.getText().toString());
+            editor.putString("title", editIssue.getText().toString());
             editor.apply();
 
         }

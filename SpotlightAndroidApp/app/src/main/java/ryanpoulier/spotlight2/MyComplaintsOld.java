@@ -52,8 +52,8 @@ public class MyComplaintsOld extends AppCompatActivity {
                 id= cursor.getString(0);
                 title= cursor.getString(1);
                 timestamp=cursor.getString(2);
-                DataProvider dataProvider = new DataProvider(title,timestamp, id);
-                listd.add(dataProvider);
+//                DataProvider dataProvider = new DataProvider(title,timestamp, id);
+//                listd.add(dataProvider);
             }
             while (cursor.moveToNext());
         }

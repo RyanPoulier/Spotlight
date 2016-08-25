@@ -48,8 +48,8 @@ public class Chart extends AppCompatActivity {
                 id= cursor.getString(0);
                 title= cursor.getString(1);
                 timestamp=cursor.getString(2);
-                DataProvider dataProvider = new DataProvider(title,timestamp, id);
-                pda.add(dataProvider);
+//                DataProvider dataProvider = new DataProvider(title,timestamp, id);
+//                pda.add(dataProvider);
             }
             while (cursor.moveToNext());
         }

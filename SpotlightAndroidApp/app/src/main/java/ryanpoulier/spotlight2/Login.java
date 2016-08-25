@@ -32,12 +32,16 @@ import android.widget.TextView;
 
 import com.google.gson.GsonBuilder;
 
+import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.DefaultHttpClient;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -51,6 +55,7 @@ import static android.Manifest.permission.READ_CONTACTS;
  */
 public class Login extends AppCompatActivity implements LoaderCallbacks<Cursor> {
 
+    public static String userId = "";
     /**
      * Id to identity READ_CONTACTS permission request.
      */
@@ -333,6 +338,24 @@ public class Login extends AppCompatActivity implements LoaderCallbacks<Cursor> 
      */
     public class UserLoginTask extends AsyncTask<String, String, Boolean> {
 
+        protected String getASCIIContentFromEntity(HttpEntity entity) throws IllegalStateException, IOException {
+            InputStream in = entity.getContent();
+
+
+            StringBuffer out = new StringBuffer();
+            int n = 1;
+            while (n > 0) {
+                byte[] b = new byte[4096];
+                n = in.read(b);
+
+
+                if (n > 0) out.append(new String(b, 0, n));
+            }
+
+
+            return out.toString();
+        }
+
         @Override
         protected Boolean doInBackground(String... params) {
             // TODO: attempt authentication against a network service.
@@ -348,6 +371,17 @@ public class Login extends AppCompatActivity implements LoaderCallbacks<Cursor> 
             try {
                 HttpResponse response = new DefaultHttpClient().execute(httpPost);
                 if(response.getStatusLine().getStatusCode() == 202){
+                    HttpEntity entity = response.getEntity();
+
+
+                    String text = getASCIIContentFromEntity(entity);
+                    try {
+                        JSONObject json = new JSONObject(text);
+                        JSONObject temp = json.getJSONObject("_id");
+                        userId = temp.getString("$oid");
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
                     loadHome();
                 }
                 else{

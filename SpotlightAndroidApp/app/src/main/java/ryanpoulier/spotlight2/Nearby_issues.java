@@ -6,6 +6,8 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.location.Address;
 import android.location.Geocoder;
+import android.location.Location;
+import android.os.AsyncTask;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
@@ -26,6 +28,16 @@ import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import org.apache.http.HttpResponse;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.protocol.BasicHttpContext;
+import org.apache.http.protocol.HttpContext;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.IOException;
 import java.util.List;
 import java.util.StringTokenizer;
@@ -33,7 +45,7 @@ import java.util.StringTokenizer;
 public class Nearby_issues extends AppCompatActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
-    Spinner smapsearch, smaprefine;
+//    Spinner smapsearch, smaprefine;
     SQLiteDatabase sqLiteDatabase;
     Cursor cursor, c;
     DBhelper DBhelper;
@@ -47,12 +59,12 @@ public class Nearby_issues extends AppCompatActivity implements OnMapReadyCallba
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeAsUpIndicator(R.mipmap.home_icon);
 
-        mapsearch = (AutoCompleteTextView) findViewById(R.id.mapsearch);
+//        mapsearch = (AutoCompleteTextView) findViewById(R.id.mapsearch);
 
 
-        smapsearch = (Spinner) findViewById(R.id.spmapsearch);
-        smaprefine = (Spinner) findViewById(R.id.spmapsearchrefine);
-        smaprefine.setVisibility(View.INVISIBLE);
+//        smapsearch = (Spinner) findViewById(R.id.spmapsearch);
+//        smaprefine = (Spinner) findViewById(R.id.spmapsearchrefine);
+//        smaprefine.setVisibility(View.INVISIBLE);
 
         DBhelper = new DBhelper(getApplicationContext());
         sqLiteDatabase = DBhelper.getReadableDatabase();
@@ -94,6 +106,8 @@ public class Nearby_issues extends AppCompatActivity implements OnMapReadyCallba
 
        cursor = DBhelper.getAllData(sqLiteDatabase);
 
+        mMap.setMyLocationEnabled(true);
+
        if (cursor.moveToFirst()) {
            do {
                title= cursor.getString(1);
@@ -122,6 +136,8 @@ public class Nearby_issues extends AppCompatActivity implements OnMapReadyCallba
            }
        });
 
+
+
    }
 
     public void ListSwitch (View view){
@@ -132,7 +148,7 @@ public class Nearby_issues extends AppCompatActivity implements OnMapReadyCallba
     public void MapSearch (View view) {
 
         // SHORTCUT
-        smaprefine.setVisibility(View.VISIBLE);
+//        smaprefine.setVisibility(View.VISIBLE);
 
         mapsearchterm = mapsearch.getText().toString();
         Toast.makeText(Nearby_issues.this, mapsearchterm, Toast.LENGTH_SHORT).show();
@@ -159,6 +175,5 @@ public class Nearby_issues extends AppCompatActivity implements OnMapReadyCallba
         }
 
     }
-
 
 }

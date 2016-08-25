@@ -36,7 +36,7 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/editText7"
+        android:id="@+id/txtIssue"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_below="@+id/textView9"
@@ -50,7 +50,7 @@
         android:id="@+id/txtDescription"
         android:layout_marginTop="39dp"
         android:hint="Description"
-        android:layout_below="@+id/editText7"
+        android:layout_below="@+id/txtIssue"
         android:layout_alignParentEnd="true"
         android:layout_toEndOf="@+id/textView9" />
 </RelativeLayout>

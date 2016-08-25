@@ -54,7 +54,8 @@ public class New_Complaint_Preview extends AppCompatActivity {
     ImageView image1;
     VideoView video1;
     String title_issue_type, title_location;
-
+    float longi, lati;
+    String address;
     Context context= this;
     Button Submit_Complaint;
     DBhelper DBhelper;
@@ -106,6 +107,9 @@ public class New_Complaint_Preview extends AppCompatActivity {
         String coordinates= prefs.getString("gpsCoordinates", "no data test");
         gpsCoordinatespreview.setText(coordinates);
         title_location= coordinates;
+        longi = prefs.getFloat("longitude", 0);
+        lati = prefs.getFloat("latitude", 0);
+        address = prefs.getString("address","");
     }
 
     private void displayDataIssueType(){
@@ -116,7 +120,9 @@ public class New_Complaint_Preview extends AppCompatActivity {
 
     }
     private void displayDataTitle(){
-        titlepreview.setText(title_issue_type + " @ " + title_location);
+        SharedPreferences prefs = getSharedPreferences("desc", MODE_WORLD_READABLE);
+        String issuetype= prefs.getString("title", "");
+        titlepreview.setText(issuetype);
     }
 
     private void displayImages() {
@@ -147,7 +153,7 @@ public class New_Complaint_Preview extends AppCompatActivity {
 
     // based on https://www.youtube.com/watch?v=T0ClYrJukPA
     public void SaveComplaint(View view) {
-
+        final SharedPreferences prefs = getSharedPreferences("gpsCoordinates", MODE_WORLD_READABLE);
         AlertDialog.Builder builder = new AlertDialog.Builder(New_Complaint_Preview.this);
         builder.setTitle("Alert");
         builder.setMessage("Are you sure you want to submit this complaint?");
@@ -171,12 +177,14 @@ public class New_Complaint_Preview extends AppCompatActivity {
                 Map<String, String> comment = new HashMap<String, String>();
                 comment.put("title", complaintitle);
                 comment.put("description", description);
-                comment.put("address", "");
-                comment.put("longitude", "0");
-                comment.put("latitude", "0");
+                comment.put("address", address);
+                comment.put("longitude", longi + "");
+                comment.put("latitude", lati + "");
+                comment.put("userId", Login.userId);
                 String json = new GsonBuilder().create().toJson(comment, Map.class);
-                makeRequest("http://ec2-52-66-125-116.ap-south-1.compute.amazonaws.com:8080/spotlight-api/issues", json);
-                AfterSubmissionMessage();
+//                makeRequest("http://ec2-52-66-125-116.ap-south-1.compute.amazonaws.com:8080/spotlight-api/issues", json);
+//                AfterSubmissionMessage();
+                new AddComplaintTask().execute("http://ec2-52-66-125-116.ap-south-1.compute.amazonaws.com:8080/spotlight-api/issues", json);
             }
         });
 
@@ -187,6 +195,41 @@ public class New_Complaint_Preview extends AppCompatActivity {
 
         AlertDialog alert = builder.create();
         alert.show();
+
+    }
+
+    public class AddComplaintTask extends AsyncTask<String, String, Boolean> {
+
+        @Override
+        protected Boolean doInBackground(String... params) {
+            // TODO: attempt authentication against a network service.
+
+            HttpPost httpPost = new HttpPost(params[0]);
+            try {
+                httpPost.setEntity(new StringEntity(params[1]));
+            } catch (UnsupportedEncodingException e) {
+                e.printStackTrace();
+            }
+            httpPost.setHeader("Accept", "application/json");
+            httpPost.setHeader("Content-type", "application/json");
+            try {
+                HttpResponse response = new DefaultHttpClient().execute(httpPost);
+                if(response.getStatusLine().getStatusCode() != 202){
+                    return false;
+                }
+                return true;
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            // TODO: register the new account here.
+            return false;
+        }
+
+        @Override
+        protected void onPostExecute(final Boolean success) {
+            AfterSubmissionMessage();
+        }
 
     }
 
@@ -232,74 +275,7 @@ public class New_Complaint_Preview extends AppCompatActivity {
         return null;
     }
 
-//    private class FeedList extends AsyncTask<Void, Void, String> {
-//        protected String getASCIIContentFromEntity(HttpEntity entity) throws IllegalStateException, IOException {
-//            InputStream in = entity.getContent();
-//
-//
-//            StringBuffer out = new StringBuffer();
-//            int n = 1;
-//            while (n > 0) {
-//                byte[] b = new byte[4096];
-//                n = in.read(b);
-//
-//
-//                if (n > 0) out.append(new String(b, 0, n));
-//            }
-//
-//
-//            return out.toString();
-//        }
-//
-//
-//        @Override
-//        protected String doInBackground(Void... params) {
-//            HttpClient httpClient = new DefaultHttpClient();
-//            HttpContext localContext = new BasicHttpContext();
-//            HttpGet httpGet = new HttpGet("http://ec2-52-66-125-116.ap-south-1.compute.amazonaws.com:8080/spotlight-api/issues");
-//            String text = null;
-//            try {
-//                HttpResponse response = httpClient.execute(httpGet, localContext);
-//
-//
-//                HttpEntity entity = response.getEntity();
-//
-//
-//                text = getASCIIContentFromEntity(entity);
-//
-//
-//            } catch (Exception e) {
-//                return e.getLocalizedMessage();
-//            }
-//
-//
-//            return text;
-//        }
-//
-//        protected void onPostExecute(String results) {
-//            if (results!=null) {
-//                try {
-//                    JSONArray issues = new JSONArray(results);
-//                    for(int i = 0, count = issues.length(); i< count; i++)
-//                    {
-//                        try {
-//                            JSONObject jsonObject = issues.getJSONObject(i);
-//                            lsd.add(new DataProvider(jsonObject.getString("title"), "", ""));
-//                        }
-//                        catch (JSONException e) {
-//                            e.printStackTrace();
-//                        }
-//                    }
-//                } catch (JSONException e) {
-//                    e.printStackTrace();
-//                }
-//
-//
-//
-//
-//            }
-//        }
-//    }
+
 }
 
 

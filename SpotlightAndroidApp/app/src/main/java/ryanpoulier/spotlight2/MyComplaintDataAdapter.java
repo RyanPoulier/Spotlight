@@ -88,7 +88,7 @@ public class MyComplaintDataAdapter extends ArrayAdapter {
         DataProvider dataProvider = (DataProvider) this.getItem(position);
         lytHandler.TITLE.setText(dataProvider.getTitle());
         lytHandler.TIMESTAMP.setText(dataProvider.getTimestamp());
-        lytHandler.ID.setText(dataProvider.getID());
+        lytHandler.ID.setText(dataProvider.getID()+"");
 
         return row;
 

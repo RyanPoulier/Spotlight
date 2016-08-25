@@ -67,8 +67,8 @@ public class Latest_Complaints extends AppCompatActivity {
                 id = cursor1.getString(0);
                 title = cursor1.getString(1);
                 timestamp = cursor1.getString(2);
-                DataProvider dataProvider = new DataProvider(title, timestamp, id);
-                lsd.add(dataProvider);
+//                DataProvider dataProvider = new DataProvider(title, timestamp, id);
+//                lsd.add(dataProvider);
                 //listview.setAdapter(emptylsd);
                 listview.setAdapter(lsd);
             }
