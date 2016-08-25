@@ -7,6 +7,7 @@ public class DataProvider {
 
 
     private String title;
+    private String issueType;
     private String timestamp;
     private String ID;
 
@@ -33,11 +34,20 @@ public class DataProvider {
         this.ID = ID;
     }
 
-    public DataProvider(String title,String timestamp,String ID){
+    public DataProvider(String title,String timestamp,String ID, String issueType){
         this.title= title;
         this.timestamp= timestamp;
         this.ID= ID;
+        this.issueType = issueType;
 
+    }
+
+    public String getIssueType(){
+        return issueType;
+    }
+
+    public  void setIssueType(String issueType){
+        this.issueType = issueType;
     }
 
 

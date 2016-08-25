@@ -117,7 +117,7 @@ public class PrioritisedDataAdapter extends ArrayAdapter {
         DataProvider dataProvider = (DataProvider) this.getItem(position);
         layoutHandler.TITLE.setText(dataProvider.getTitle());
         layoutHandler.TIMESTAMP.setText(dataProvider.getTimestamp());
-        layoutHandler.ID.setText(dataProvider.getID());
+        layoutHandler.ID.setText(dataProvider.getID()+"");
         layoutHandler.NUMBER.setText(String.valueOf(position+1));
 
         return row;
