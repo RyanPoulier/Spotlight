@@ -1,14 +1,16 @@
 package com.spotlight.core.beans;
 
+import com.google.gson.Gson;
+
 /**
- * Created by Padmaka on 8/1/16.
+ * Created by padmaka on 8/23/16.
  */
-public class Complaint {
+public class Vote {
 
     private ID _id;
-    private long createdDate;
     private String issueId;
     private String userId;
+    private long createdTime;
     private String userName;
 
 
@@ -18,14 +20,6 @@ public class Complaint {
 
     public void set_id(ID _id) {
         this._id = _id;
-    }
-
-    public long getCreatedDate() {
-        return createdDate;
-    }
-
-    public void setCreatedDate(long createdDate) {
-        this.createdDate = createdDate;
     }
 
     public String getIssueId() {
@@ -42,6 +36,19 @@ public class Complaint {
 
     public void setUserId(String userId) {
         this.userId = userId;
+    }
+
+    @Override
+    public String toString(){
+        return new Gson().toJson(this);
+    }
+
+    public long getCreatedTime() {
+        return createdTime;
+    }
+
+    public void setCreatedTime(long createdTime) {
+        this.createdTime = createdTime;
     }
 
     public String getUserName() {

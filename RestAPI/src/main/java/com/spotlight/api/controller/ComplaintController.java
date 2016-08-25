@@ -1,17 +1,13 @@
 package com.spotlight.api.controller;
 
-import com.google.gson.JsonObject;
-import com.spotlight.core.beans.Issue;
+import com.spotlight.core.beans.Complaint;
+import com.spotlight.core.exceptions.InvalidParameterException;
 import com.spotlight.core.service.ComplaintManager;
 import com.spotlight.core.service.impl.ComplaintManagerImpl;
 import com.wordnik.swagger.annotations.Api;
 import org.apache.log4j.Logger;
 
-import javax.ws.rs.Consumes;
-import javax.ws.rs.GET;
-import javax.ws.rs.POST;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.net.UnknownHostException;
@@ -23,7 +19,7 @@ import java.util.List;
  */
 
 @Path("/")
-@Api(value = "/", description = "Test service!")
+@Api(value = "/", description = "Endpoints to manage Complaints")
 public class ComplaintController {
 
     private static final Logger LOGGER = Logger.getLogger(ComplaintController.class);
@@ -37,21 +33,18 @@ public class ComplaintController {
     @Path("/complaints")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Response saveComplaint(JsonObject fullComplaint) throws UnknownHostException {
+    public Response saveComplaint(Complaint complaint) throws UnknownHostException, InvalidParameterException {
 
-        LOGGER.info("Received request to save issue - " + fullComplaint.toString());
-        JsonObject complaintObj = complaintManager.saveNewComplaint(fullComplaint);
-        return Response.status(Response.Status.ACCEPTED).entity(complaintObj).build();
+        LOGGER.info("Received request to save complaint - " + complaint.toString());
+        return Response.status(Response.Status.ACCEPTED).entity(complaintManager.saveNewComplaint(complaint)).build();
     }
 
     @GET
-    @Path("/complaints")
+    @Path("/complaints/{issueId}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getComplaints() throws UnknownHostException {
+    public Response getComplaints(@PathParam("issueId") String issueId) throws UnknownHostException {
 
-        LOGGER.info("Received request to retrieve all issues");
-        List<Issue> issues = new ArrayList<>();
-        issues = complaintManager.getAllComplaints();
-        return Response.status(Response.Status.ACCEPTED).entity(issues).build();
+        LOGGER.info("Received request to retrieve all complaints for the issue - " + issueId);
+        return Response.status(Response.Status.ACCEPTED).entity(complaintManager.getAllComplaints(issueId)).build();
     }
 }
