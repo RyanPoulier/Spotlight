@@ -14,4 +14,5 @@ public interface ComplaintDao {
     Complaint saveComplaint(Complaint complaint) throws UnknownHostException;
     Complaint getComplaint(String id) throws UnknownHostException;
     List<Complaint> getComplaints(String issueId) throws UnknownHostException;
+    List<Complaint> getComplaintsByUserId(String userId) throws UnknownHostException;
 }

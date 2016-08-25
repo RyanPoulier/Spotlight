@@ -3,6 +3,7 @@ package com.spotlight.core.dao.impl;
 import com.google.gson.Gson;
 import com.google.gson.JsonParser;
 import com.mongodb.*;
+import com.spotlight.core.beans.Closure;
 import com.spotlight.core.beans.Issue;
 import com.spotlight.core.dao.IssueDao;
 import com.spotlight.core.util.SpotlightUtils;
@@ -33,6 +34,10 @@ public class IssueDaoImpl implements IssueDao {
 
         BasicDBObject issueDoc =  new BasicDBObject();
 
+        if (issue.get_id() != null) {
+            issueDoc.put("_id", new ObjectId(issue.get_id().get$oid()));
+        }
+
         issueDoc.put("title", issue.getTitle());
         issueDoc.put("description", issue.getDescription());
         issueDoc.put("address", issue.getAddress());
@@ -45,12 +50,12 @@ public class IssueDaoImpl implements IssueDao {
         issueDoc.put("closureDate", issue.getClosureDate());
         issueDoc.put("closureRating", issue.getClosureRating());
         issueDoc.put("createdTime", issue.getCreatedTime());
-        issueDoc.put("status", "RECENTLY_SUBMITTED");
+        issueDoc.put("status", issue.getStatus());
         issueDoc.put("userId", issue.getUserId());
         issueDoc.put("userName", issue.getUserName());
         issueDoc.put("issueType", issue.getIssueType());
 
-        collection.insert(issueDoc);
+        collection.save(issueDoc);
         ObjectId id = issueDoc.getObjectId("_id");
         Issue savedIssue = getIssue(id.toString());
         LOGGER.info(issue.toString());
