@@ -1,5 +1,6 @@
 package com.spotlight.core.dao;
 
+import com.spotlight.core.beans.Closure;
 import com.spotlight.core.beans.Issue;
 
 import java.net.UnknownHostException;

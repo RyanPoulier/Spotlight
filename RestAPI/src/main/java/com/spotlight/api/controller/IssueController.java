@@ -1,5 +1,6 @@
 package com.spotlight.api.controller;
 
+import com.spotlight.core.beans.Closure;
 import com.spotlight.core.beans.Issue;
 import com.spotlight.core.exceptions.InvalidParameterException;
 import com.spotlight.core.service.IssueManager;
@@ -70,7 +71,26 @@ public class IssueController {
     @Produces(MediaType.APPLICATION_JSON)
     public Response getIssuesByType(@PathParam("type") String type) throws InvalidParameterException, UnknownHostException {
 
-        LOGGER.info("Received request to get issue - " + type);
+        LOGGER.info("Received request to get issues for type - " + type);
         return Response.status(Response.Status.ACCEPTED).entity(issueManager.getIssuesByType(type)).build();
+    }
+
+    @GET
+    @Path("/issues/complained/{userId}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getUserComplainedIssues(@PathParam("userId") String userId) throws InvalidParameterException, UnknownHostException {
+
+        LOGGER.info("Received request to get user complained issues - " + userId);
+        return Response.status(Response.Status.ACCEPTED).entity(issueManager.getUserComplainedIssues(userId)).build();
+    }
+
+    @POST
+    @Path("/issues/closure")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response closeIssue(Closure closure) throws UnknownHostException, InvalidParameterException {
+
+        LOGGER.info("Received request to close an issue - " + closure.toString());
+        return Response.status(Response.Status.ACCEPTED).entity(issueManager.closeIssue(closure)).build();
     }
 }

@@ -1,5 +1,6 @@
 package com.spotlight.core.service.impl;
 
+import com.spotlight.core.beans.Closure;
 import com.spotlight.core.beans.Complaint;
 import com.spotlight.core.beans.Issue;
 import com.spotlight.core.dao.ComplaintDao;
@@ -13,6 +14,8 @@ import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 
 import java.net.UnknownHostException;
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 
 /**
@@ -49,6 +52,7 @@ public class IssueManagerImpl implements IssueManager {
 
         LOGGER.info("Saving Issue...");
 
+        issue.setStatus("RECENTLY_SUBMITTED");
         Issue savedIssue = issueDao.saveIssue(issue);
 
         LOGGER.info("Saving a new complaint ...");
@@ -90,5 +94,71 @@ public class IssueManagerImpl implements IssueManager {
     public List<Issue> getAllIssues() throws UnknownHostException {
 
         return issueDao.getIssues();
+    }
+
+    @Override
+    public List<Issue> getUserComplainedIssues(String userId) throws InvalidParameterException, UnknownHostException {
+
+        HashSet<String> issueIds = new HashSet<>();
+        List<Issue> issues = new ArrayList<>();
+
+        if (StringUtils.isBlank(userId)){
+            String message = "Invalid parameters provided";
+            LOGGER.error(message);
+            throw new InvalidParameterException(message);
+        }
+
+        if (!SpotlightUtils.validateUserId(userId)) {
+            String message = "User ID doesn't exist";
+            LOGGER.error(message);
+            throw new InvalidParameterException(message);
+        }
+
+        List<Complaint> complaints = complaintDao.getComplaintsByUserId(userId);
+
+        if (complaints.size() == 0) {
+            return issues;
+        }
+
+        for (Complaint complaint : complaints) {
+            issueIds.add(complaint.getIssueId());
+        }
+
+        for (String issueId : issueIds) {
+            issues.add(issueDao.getIssue(issueId));
+        }
+
+        return issues;
+    }
+
+    @Override
+    public Issue closeIssue(Closure closure) throws InvalidParameterException, UnknownHostException {
+
+        if (closure == null) {
+            String message = "Invalid parameters provided";
+            LOGGER.error(message);
+            throw new InvalidParameterException(message);
+        }
+
+        if (StringUtils.isBlank(closure.getUserId()) || StringUtils.isBlank(closure.getIssueId())) {
+            String message = "Invalid parameters provided";
+            LOGGER.error(message);
+            throw new InvalidParameterException(message);
+        }
+
+        if (!SpotlightUtils.validateUserId(closure.getUserId()) && !SpotlightUtils.validateIssueId(closure.getIssueId())) {
+            String message = "User ID or Issue ID doesn't exist!";
+            LOGGER.error(message);
+            throw new InvalidParameterException(message);
+        }
+
+        Issue issue = issueDao.getIssue(closure.getIssueId());
+
+        issue.setClosureDate(System.currentTimeMillis() / 1000L);
+        issue.setClosureRating(closure.getClosureRating());
+        issue.setStatus("CLOSED");
+
+        Issue savedIssue = issueDao.saveIssue(issue);
+        return savedIssue;
     }
 }

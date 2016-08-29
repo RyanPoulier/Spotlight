@@ -1,5 +1,6 @@
 package com.spotlight.core.service;
 
+import com.spotlight.core.beans.Closure;
 import com.spotlight.core.beans.Issue;
 import com.spotlight.core.exceptions.InvalidParameterException;
 
@@ -16,4 +17,6 @@ public interface IssueManager {
     List<Issue> getIssuesByType(String type) throws UnknownHostException;
     List<Issue> getNearbyIssues(double latitude, double longitude) throws UnknownHostException;
     List<Issue> getAllIssues() throws UnknownHostException;
+    List<Issue> getUserComplainedIssues(String userId) throws InvalidParameterException, UnknownHostException;
+    Issue closeIssue(Closure closure) throws InvalidParameterException, UnknownHostException;
 }

@@ -1,7 +1,6 @@
 package com.spotlight.core.beans;
 
 import com.google.gson.Gson;
-import scala.util.parsing.combinator.testing.Str;
 
 /**
  * Created by Padmaka on 8/1/16.

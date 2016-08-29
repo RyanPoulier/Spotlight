@@ -90,4 +90,28 @@ public class ComplaintDaoImpl implements ComplaintDao {
         mongo.close();
         return complaints;
     }
+
+    @Override
+    public List<Complaint> getComplaintsByUserId(String userId) throws UnknownHostException {
+
+        Mongo mongo = new Mongo("localhost", 27017);
+        DB db = mongo.getDB("test-db");
+        List<Complaint> complaints = new ArrayList<>();
+        Gson gson = new Gson();
+        JsonParser parser = new JsonParser();
+
+        DBCollection collection = db.getCollection("complaint");
+        BasicDBObject complaintDoc = new BasicDBObject();
+        complaintDoc.put("userId", userId);
+
+        DBCursor cursor = collection.find(complaintDoc);
+        while(cursor.hasNext()) {
+            String issueString = cursor.next().toString();
+            Complaint complaint = gson.fromJson(parser.parse(issueString).getAsJsonObject(), Complaint.class);
+            complaints.add(complaint);
+        }
+
+        mongo.close();
+        return complaints;
+    }
 }
