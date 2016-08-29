@@ -180,6 +180,7 @@ public class New_Complaint_Preview extends AppCompatActivity {
                 comment.put("address", address);
                 comment.put("longitude", longi + "");
                 comment.put("latitude", lati + "");
+                comment.put("issueType", title_issue_type);
                 comment.put("userId", Login.userId);
                 String json = new GsonBuilder().create().toJson(comment, Map.class);
 //                makeRequest("http://ec2-52-66-125-116.ap-south-1.compute.amazonaws.com:8080/spotlight-api/issues", json);
