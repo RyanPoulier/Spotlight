@@ -18,7 +18,7 @@ public class Issue {
     private int estimatedDates;
     private long actualResolutionDate;
     private long closureDate;
-    private int closureRating;
+    private String closureRating;
     private long createdTime;
     private String status;
     private String userId;
@@ -82,11 +82,11 @@ public class Issue {
         this.votes = votes;
     }
 
-    public int getClosureRating() {
+    public String getClosureRating() {
         return closureRating;
     }
 
-    public void setClosureRating(int closureRating) {
+    public void setClosureRating(String closureRating) {
         this.closureRating = closureRating;
     }
 

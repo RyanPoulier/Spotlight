@@ -9,7 +9,7 @@ public class Closure {
 
     private String userId;
     private String issueId;
-    private int closureRating;
+    private String closureRating;
     private long closedTime;
 
     public String getUserId() {
@@ -28,11 +28,11 @@ public class Closure {
         this.issueId = issueId;
     }
 
-    public int getClosureRating() {
+    public String getClosureRating() {
         return closureRating;
     }
 
-    public void setClosureRating(int closureRating) {
+    public void setClosureRating(String closureRating) {
         this.closureRating = closureRating;
     }
 
